@@ -1,0 +1,3118 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Magnel Olivero | Software, AI Systems &amp; Visual Design</title>
+  
+  <!-- Sleek Vector Monogram Favicon (populated from PROFILE) -->
+  <link id="favicon-link" rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230b0c10'/><path d='M4.5 22.5V9.5L9.5 17L14.5 9.5V22.5' stroke='%23ffffff' stroke-width='2.3' stroke-linecap='round' stroke-linejoin='round' fill='none'/><circle cx='21' cy='16' r='3.8' stroke='%23ffffff' stroke-width='2.3' fill='none'/><circle cx='27' cy='21.5' r='1.7' fill='%23c3f400'/></svg>">
+  
+  <meta id="meta-description" name="description" content="Magnel Olivero - Computer Science student and builder working on multi-agent systems, real-time voice apps, and visual design. ASIET '27, Kerala, India.">
+  <meta id="meta-keywords" name="keywords" content="">
+  <meta id="meta-author" name="author" content="">
+  
+  <!-- Open Graph -->
+  <meta id="og-title" property="og:title" content="Magnel Olivero | Software, AI Systems &amp; Visual Design">
+  <meta id="og-description" property="og:description" content="Computer Science student building multi-agent tools, real-time voice apps, and visual design systems. ASIET '27, Kerala, India.">
+  <meta id="og-type" property="og:type" content="website">
+  <meta id="og-site-name" property="og:site_name" content="Magnel Olivero Portfolio">
+  <meta id="og-locale" property="og:locale" content="">
+  <meta id="meta-theme-color" name="theme-color" content="">
+  <meta id="meta-color-scheme" name="color-scheme" content="">
+  <meta id="twitter-card" name="twitter:card" content="summary">
+  <meta id="twitter-title" name="twitter:title" content="Magnel Olivero | Software, AI Systems &amp; Visual Design">
+  <meta id="twitter-description" name="twitter:description" content="Computer Science student building multi-agent tools, real-time voice apps, and visual design systems. ASIET '27, Kerala, India.">
+
+  <!-- Single-Source Profile Data (works on both file:// and http://) -->
+  <script src="data/profile.js"></script>
+  <script>
+    (function applyHeadProfile() {
+      var P = window.PROFILE;
+      if (!P) return;
+      var val = function (x) { return x && typeof x === 'object' && 'value' in x ? x.value : x; };
+      var setMeta = function (id, value) {
+        var el = document.getElementById(id);
+        if (el && value != null) el.setAttribute('content', value);
+      };
+      document.title = val(P.seo.title) || '';
+      var favicon = document.getElementById('favicon-link');
+      if (favicon && P.branding && P.branding.monogram && Array.isArray(P.branding.monogram.options)) {
+        var selectedId = val(P.branding.monogram.selectedOption);
+        var selectedOpt =
+          P.branding.monogram.options.find(function (o) { return val(o.id) === selectedId && o.faviconDataUri; }) ||
+          P.branding.monogram.options.find(function (o) { return o.faviconDataUri; });
+        if (selectedOpt) {
+          favicon.setAttribute('href', val(selectedOpt.faviconDataUri));
+        }
+      }
+      setMeta('meta-description', val(P.seo.description));
+      setMeta('meta-keywords', val(P.seo.keywords));
+      setMeta('meta-author', val(P.seo.author));
+      setMeta('og-title', val(P.seo.ogTitle));
+      setMeta('og-description', val(P.seo.ogDescription));
+      setMeta('og-type', val(P.seo.ogType));
+      setMeta('og-site-name', val(P.seo.ogSiteName));
+      setMeta('og-locale', val(P.seo.ogLocale));
+      setMeta('meta-theme-color', val(P.seo.themeColor));
+      setMeta('meta-color-scheme', val(P.seo.colorScheme));
+      setMeta('twitter-card', val(P.seo.twitterCard));
+      setMeta('twitter-title', val(P.seo.twitterTitle));
+      setMeta('twitter-description', val(P.seo.twitterDescription));
+    })();
+  </script>
+
+  <!-- Google Fonts: Anton, Space Grotesk, Syne, JetBrains Mono, Caveat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  
+  <!-- Lenis Smooth Scroll CSS (Local Vendor with CDN Fallback) -->
+  <link rel="stylesheet" href="vendor/lenis.css">
+  
+  <!-- GSAP Core & ScrollTrigger (Local Vendor with CDN Fallback) -->
+  <script src="vendor/gsap.min.js"></script>
+  <script>window.gsap || document.write('<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"><\/script>');</script>
+  <script src="vendor/ScrollTrigger.min.js"></script>
+  <script>window.ScrollTrigger || document.write('<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"><\/script>');</script>
+  
+  <!-- Lenis Smooth Scroll JS (Local Vendor with CDN Fallback) -->
+  <script src="vendor/lenis.min.js"></script>
+  <script>window.Lenis || document.write('<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"><\/script>');</script>
+  
+  <script>
+    if (typeof tailwind !== 'undefined') {
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#ef4940",
+              "primary-container": "#ff524a",
+              "secondary-fixed": "#c3f400",
+              "accent-lime": "#d4ff00",
+              "surface": "#0c0d12",
+              "surface-container": "#12131b",
+              "surface-card": "#151622",
+              "outline-variant": "#222433"
+            },
+            fontFamily: {
+              "sans": ["'Space Grotesk'", "sans-serif"],
+              "display": ["'Syne'", "sans-serif"],
+              "mono": ["'JetBrains Mono'", "monospace"],
+              "script": ["'Caveat'", "cursive"]
+            }
+          }
+        }
+      };
+    }
+  </script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    html, body {
+      overflow-x: clip;
+    }
+
+    body {
+      background-color: #0b0c10;
+      color: #e3e1e9;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    ::selection {
+      background: #c3f400;
+      color: #08090c;
+    }
+
+    /* Grid Dots Background */
+    .bg-grid-dots {
+      background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1.2px, transparent 1.2px);
+      background-size: 30px 30px;
+    }
+
+    /* Ambient Crimson Atmosphere sampled from user monitor */
+    .crimson-glow {
+      background: radial-gradient(ellipse 70% 55% at 50% 46%, rgba(239, 73, 64, 0.28) 0%, rgba(189, 56, 63, 0.12) 45%, rgba(66, 15, 28, 0.04) 70%, transparent 85%);
+    }
+
+    /* PORTFOLIO Backdrop Gradient Text from user reference */
+    .portfolio-bg-gradient {
+      font-family: 'Anton', sans-serif;
+      background: linear-gradient(180deg, #ef4940 0%, #e14441 26%, #bd383f 52%, #7b2334 78%, #3a0a14 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 15px 45px rgba(239, 73, 64, 0.35));
+    }
+
+    /* Cutout Sticker Drop Shadow */
+    .sticker-shadow {
+      filter: drop-shadow(0 16px 36px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 25px rgba(239, 73, 64, 0.2));
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 7px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #090a0e;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #232534;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #ef4940;
+    }
+
+    /* Squiggly Underline SVG */
+    .wavy-underline-wrapper {
+      position: relative;
+      display: inline-block;
+      white-space: nowrap;
+    }
+    .wavy-svg-line {
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      height: 14px;
+      overflow: visible;
+    }
+    .wavy-svg-line path {
+      stroke-dasharray: 450;
+      stroke-dashoffset: 450;
+      transition: stroke-dashoffset 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .wavy-svg-line.is-drawn path {
+      stroke-dashoffset: 0;
+    }
+
+    /* Lenis Smooth Scroll Optimization */
+    html.lenis, html.lenis body {
+      height: auto;
+    }
+    .lenis.lenis-smooth {
+      scroll-behavior: auto !important;
+    }
+    .lenis.lenis-smooth [data-lenis-prevent] {
+      overscroll-behavior: contain;
+    }
+    .lenis.lenis-stopped {
+      overflow: hidden;
+    }
+
+    /* Precision Damped Cursor Follower */
+    @media (pointer: fine) {
+      .cursor-dot {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 6px;
+        height: 6px;
+        background-color: #ef4940;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 9999;
+        transform: translate(-50%, -50%);
+        transition: opacity 0.2s;
+      }
+      .cursor-ring {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 32px;
+        height: 32px;
+        border: 1.5px solid rgba(195, 244, 0, 0.55);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 9998;
+        transform: translate(-50%, -50%);
+        transition: width 0.2s cubic-bezier(0.2, 0.8, 0.2, 1),
+                    height 0.2s cubic-bezier(0.2, 0.8, 0.2, 1),
+                    border-color 0.2s, background-color 0.2s;
+      }
+      body.cursor-active .cursor-ring {
+        width: 50px;
+        height: 50px;
+        border-color: #ef4940;
+        background-color: rgba(239, 73, 64, 0.08);
+      }
+    }
+
+    /* 3D Perspective Tilt with 120 FPS Hardware Acceleration */
+    .tilt-card {
+      transform-style: preserve-3d;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      transition: border-color 0.3s, box-shadow 0.3s;
+      will-change: transform;
+    }
+
+    /* Shape-Masked Aperture Viewport (Cross-Browser WebKit & Standard) */
+    .shape-mask-viewport {
+      will-change: clip-path, -webkit-clip-path, transform;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      -webkit-clip-path: inset(18% 14% 18% 14% round 48px);
+      clip-path: inset(18% 14% 18% 14% round 48px);
+    }
+
+    /* Milestone Active Highlight Classes (Preserves hover specificity) */
+    .milestone-card.is-active-lime {
+      border-color: rgba(195, 244, 0, 0.65);
+      box-shadow: 0 0 25px rgba(195, 244, 0, 0.14);
+    }
+    .milestone-card.is-active-red {
+      border-color: rgba(239, 73, 64, 0.65);
+      box-shadow: 0 0 25px rgba(239, 73, 64, 0.14);
+    }
+
+    /* Navbar Active Section Sync & Header Scroll Elevation */
+    header {
+      transition: background-color 0.25s ease, border-color 0.25s ease;
+    }
+    header.is-scrolled {
+      background-color: rgba(8, 9, 13, 0.94);
+      border-bottom-color: rgba(44, 48, 76, 0.85);
+    }
+    header nav a.is-nav-active {
+      color: #c3f400;
+    }
+
+    /* Hardware Compositing Layers */
+    #hero-portrait, #hero-bg-text, .project-terminal, .bento-card, .academics-card {
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+
+    /* Material Symbols setup */
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+
+    .text-glow-red {
+      text-shadow: 0 0 24px rgba(239, 73, 64, 0.65), 0 0 50px rgba(239, 73, 64, 0.35);
+    }
+  </style>
+</head>
+<body class="bg-[#0b0c10] text-[#e3e1e9] antialiased relative selection:bg-[#c3f400] selection:text-[#0b0c10]">
+
+  <!-- High-Precision Damped Cursor Follower (Fine pointer only) -->
+  <div class="cursor-dot hidden md:block" id="cursor-dot"></div>
+  <div class="cursor-ring hidden md:block" id="cursor-ring"></div>
+
+  <!-- ========================================== -->
+  <!-- 1. TOP APP BAR / NAVBAR -->
+  <!-- ========================================== -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-[#08090d]/85 backdrop-blur-md border-b border-[#1e202c] shadow-2xl">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 md:px-10 py-3.5">
+      
+      <!-- Brand Logo -->
+      <a id="nav-brand" href="#" class="font-sans text-sm sm:text-base tracking-tight font-extrabold text-white hover:text-[#c3f400] transition-colors whitespace-nowrap"></a>
+
+      <!-- Desktop Navigation Links -->
+      <nav id="nav-links" class="hidden md:flex items-center gap-6 lg:gap-7"></nav>
+
+      <!-- Trailing Action -->
+      <div class="flex items-center gap-3">
+        <a id="nav-cta" href="#" class="magnetic-btn inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-[#141520] hover:bg-[#1d1f2d] border border-[#282a3c] hover:border-[#c3f400]/60 text-white hover:text-[#c3f400] font-mono text-[11px] sm:text-[12px] font-semibold tracking-wide transition-colors duration-150 active:scale-95 shadow-sm whitespace-nowrap"></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================== -->
+  <!-- 2. HERO SECTION -->
+  <!-- ========================================== -->
+  <section id="hero" class="relative min-h-[100dvh] pt-20 pb-10 sm:pt-24 sm:pb-12 flex flex-col justify-center items-center overflow-hidden bg-grid-dots">
+    <!-- Ambient Atmospheric Glow -->
+    <div id="hero-glow" class="absolute inset-0 pointer-events-none will-change-transform">
+      <div id="hero-glow-pulse" class="w-full h-full crimson-glow will-change-transform"></div>
+    </div>
+
+    <!-- Subtle Left Margin Context (Clean, minimal) -->
+    <div class="hero-telemetry absolute left-4 sm:left-8 top-0 bottom-0 hidden md:flex flex-col justify-between pt-20 pb-8 select-none z-20 pointer-events-none will-change-transform">
+      <div class="absolute top-20 bottom-10 left-1 w-[1px] bg-gradient-to-b from-[#ef4940]/70 via-[#ef4940]/30 to-transparent pointer-events-none"></div>
+
+      <div class="space-y-1 z-10 pl-4">
+        <div class="text-[#ef4940] font-mono text-base font-bold leading-none -ml-3.5">+</div>
+        <div id="hero-location" class="text-[#cbd5e1] font-mono text-[11px] tracking-wider uppercase pt-1 font-medium"></div>
+        <div id="hero-edu-short" class="text-[#94a3b8] font-mono text-[11px] tracking-wider uppercase"></div>
+      </div>
+
+      <div class="space-y-1 z-10 pl-4">
+        <div class="text-[#ef4940] font-mono text-base font-bold leading-none -ml-3.5">+</div>
+      </div>
+    </div>
+
+    <!-- Subtle Right Margin Links & Status -->
+    <div class="hero-telemetry absolute right-4 sm:right-8 top-0 bottom-0 hidden md:flex flex-col justify-between pt-20 pb-8 select-none z-20 will-change-transform">
+      <div class="text-right pointer-events-none">
+        <div class="inline-flex items-center gap-2 text-xs font-mono text-[#cbd5e1]">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#c3f400]"></span>
+          <span id="hero-availability"></span>
+        </div>
+      </div>
+
+      <div class="text-right space-y-1">
+        <a id="hero-github-link" href="#" target="_blank" rel="noopener noreferrer" class="font-mono text-[11px] text-[#94a3b8] hover:text-white transition-colors block"></a>
+      </div>
+    </div>
+
+    <!-- Main Hero Composition Stage -->
+    <div class="relative w-full max-w-6xl mx-auto px-4 sm:px-6 flex flex-col items-center justify-center">
+
+      <!-- Background: "PORTFOLIO" Typography -->
+      <div id="hero-bg-text" class="relative w-full flex flex-col items-center justify-center pointer-events-none select-none z-0 mb-[-82px] xs:mb-[-115px] sm:mb-[-150px] md:mb-[-178px] will-change-transform">
+        <h1 id="hero-backdrop-text" class="portfolio-bg-gradient text-[64px] xs:text-[100px] sm:text-[148px] md:text-[188px] lg:text-[222px] leading-none tracking-normal select-none"></h1>
+      </div>
+
+      <!-- Hero Subject & Copy Foreground Stack -->
+      <div class="relative z-10 w-full flex flex-col items-center">
+        
+        <!-- Portrait Cutout -->
+        <div id="hero-portrait" class="relative w-full max-w-[240px] xs:max-w-[280px] sm:max-w-[330px] md:max-w-[360px] h-[215px] xs:h-[250px] sm:h-[295px] md:h-[330px] flex justify-center items-end will-change-transform">
+          <img 
+            id="hero-portrait-img"
+            src="" 
+            alt="" 
+            class="h-full w-auto object-contain object-bottom select-none pointer-events-none sticker-shadow"
+          />
+        </div>
+
+        <!-- Name Heading Container with Greeting Script -->
+        <div id="hero-title-group" class="relative z-20 mt-4 sm:mt-5 mb-2 flex flex-col items-center will-change-transform">
+          <div class="relative inline-block">
+            <span id="hero-greeting" class="absolute -top-6 -left-4 sm:-top-8 sm:-left-8 font-script text-white text-2xl xs:text-3xl sm:text-4xl font-bold -rotate-6 transform drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)] select-none pointer-events-none whitespace-nowrap z-30"></span>
+            <h2 id="hero-name" class="font-sans font-extrabold text-4xl xs:text-5xl sm:text-6xl md:text-[68px] text-white tracking-tight text-center leading-none"></h2>
+          </div>
+          <div id="hero-tagline" class="font-mono text-xs sm:text-[13px] text-[#ef4940] font-semibold tracking-[0.18em] uppercase text-center mt-2.5"></div>
+        </div>
+
+        <!-- Concise Human Bio in Figma-Style Selection Frame -->
+        <div id="figma-bounds" class="relative z-20 mt-4 mb-5 max-w-xl mx-auto px-4 w-full will-change-transform">
+          <div class="relative p-4 sm:p-5 rounded-lg border-2 border-[#3b82f6] bg-[#0c0e18]/95 backdrop-blur-md shadow-[0_0_28px_rgba(59,130,246,0.22)]">
+            <div class="absolute -top-1.5 -left-1.5 w-3 h-3 bg-white border-2 border-[#3b82f6] shadow-sm"></div>
+            <div class="absolute -top-1.5 -right-1.5 w-3 h-3 bg-white border-2 border-[#3b82f6] shadow-sm"></div>
+            <div class="absolute -bottom-1.5 -left-1.5 w-3 h-3 bg-white border-2 border-[#3b82f6] shadow-sm"></div>
+            <div class="absolute -bottom-1.5 -right-1.5 w-3 h-3 bg-white border-2 border-[#3b82f6] shadow-sm"></div>
+            
+            <div id="hero-bio-badge" class="absolute -top-3.5 left-4 px-2 py-0.5 rounded bg-[#3b82f6] text-[10px] font-mono font-bold text-white tracking-wide shadow-md"></div>
+
+            <p id="hero-bio-text" class="font-sans text-[#e2e8f0] text-xs sm:text-sm md:text-[15px] text-center leading-relaxed font-medium"></p>
+
+            <div class="absolute -bottom-4 right-6 flex items-center gap-1 text-[10px] font-mono text-[#3b82f6] pointer-events-none select-none">
+              <svg class="w-4 h-4 text-[#3b82f6] drop-shadow-md" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M4 0l16 12.279-6.951 1.17 4.325 8.817-3.596 1.734-4.35-8.879-5.428 5.428z"/>
+              </svg>
+              <span id="hero-cursor-handle" class="bg-[#3b82f6] text-white px-1.5 py-0.5 rounded text-[9px] font-bold shadow"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA Action Buttons -->
+        <div class="relative z-20 flex flex-wrap items-center justify-center gap-3 sm:gap-4 mt-1">
+          <a href="#work" class="magnetic-btn inline-flex items-center gap-2 px-6 sm:px-7 py-3 rounded-full bg-[#ef4940] hover:bg-[#ff554c] text-white font-sans text-[13px] sm:text-[14px] font-bold tracking-tight shadow-lg shadow-[#ef4940]/35 transition-colors duration-150 active:scale-95 group/btn whitespace-nowrap">
+            <span id="hero-primary-cta-label"></span>
+            <span class="material-symbols-outlined text-[17px] group-hover/btn:translate-y-0.5 transition-transform">arrow_downward</span>
+          </a>
+          <a id="hero-secondary-cta" href="#" class="magnetic-btn inline-flex items-center gap-2 px-6 sm:px-7 py-3 rounded-full bg-[#141624] hover:bg-[#1e2136] border border-[#2d3148] hover:border-[#c3f400]/70 text-white hover:text-[#c3f400] font-sans text-[13px] sm:text-[14px] font-semibold transition-colors duration-150 active:scale-95 shadow-md whitespace-nowrap">
+            <span id="hero-secondary-cta-label"></span>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 3. PHILOSOPHY / HUMAN MANIFESTO SECTION -->
+  <!-- ========================================== -->
+  <section id="philosophy" class="relative py-24 sm:py-32 bg-[#08090e] border-t border-b border-[#1b1c26] overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-10">
+      
+      <!-- High-Contrast Headline with Wavy Yellow Underline -->
+      <div class="section-header text-center max-w-4xl mx-auto mb-16 sm:mb-20">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#12131c] border border-[#232533] text-[11px] font-mono text-[#c3f400] uppercase tracking-wider mb-4 font-semibold">
+          <span id="philosophy-eyebrow"></span>
+        </div>
+        <h2 class="font-sans text-[26px] xs:text-3xl sm:text-5xl md:text-[54px] font-extrabold tracking-tight text-white leading-[1.18] mb-4">
+          <span id="philosophy-headline-prefix"></span> <br>
+          <span class="wavy-underline-wrapper text-[#c3f400]">
+            <span id="philosophy-headline-highlight"></span>
+            <svg class="wavy-svg-line" viewBox="0 0 420 12" fill="none" preserveAspectRatio="none">
+              <path d="M0,6 Q10,0 20,6 T40,6 T60,6 T80,6 T100,6 T120,6 T140,6 T160,6 T180,6 T200,6 T220,6 T240,6 T260,6 T280,6 T300,6 T320,6 T340,6 T360,6 T380,6 T400,6 T420,6" stroke="#c3f400" stroke-width="2.6" stroke-linecap="round"/>
+            </svg>
+          </span>
+        </h2>
+        <p id="philosophy-summary" class="font-sans text-sm sm:text-base text-[#e2e8f0] max-w-2xl mx-auto mt-4 leading-relaxed font-normal"></p>
+      </div>
+
+      <!-- 3 Core Engineering Bento Cards (populated from PROFILE) -->
+      <div id="philosophy-cards" class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8"></div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 3.5 GRAPHIC DESIGN & VISUAL SYSTEMS LAB -->
+  <!-- ========================================== -->
+  <section id="design" class="py-24 sm:py-32 bg-[#090a0f] border-b border-[#1b1c26] relative overflow-hidden">
+    <!-- Ambient subtle background glow -->
+    <div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 rounded-full bg-[#ef4940]/5 blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-10 right-1/4 w-80 h-80 rounded-full bg-[#c3f400]/5 blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="section-header flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div>
+          <div id="design-eyebrow" class="inline-flex items-center px-3 py-1 rounded-full bg-[#12131c] border border-[#232533] text-[11px] font-mono text-[#c3f400] uppercase tracking-wider mb-3 font-semibold"></div>
+          <h2 class="font-sans text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
+            <span id="design-heading-prefix"></span> <span id="design-heading-highlight" class="text-[#c3f400]"></span>
+          </h2>
+        </div>
+        <p id="design-subtitle" class="font-sans text-sm sm:text-base text-[#e2e8f0] max-w-md leading-relaxed"></p>
+      </div>
+
+      <!-- Asymmetrical Bento Grid of Graphic Design Systems -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
+        
+        <!-- CARD 1: Brand Identity & Monogram Architecture (7 cols) -->
+        <div class="lg:col-span-7 tilt-card group p-1.5 rounded-[2rem] bg-gradient-to-b from-[#141624] to-[#0c0d15] border border-[#25283c] hover:border-[#c3f400]/70 transition-[border-color,box-shadow] duration-300 shadow-2xl flex flex-col">
+          <div class="bg-[#0a0b12] rounded-[calc(2rem-0.375rem)] p-6 sm:p-8 flex flex-col justify-between h-full border border-[#1f2234] relative overflow-hidden">
+            
+            <!-- Top Telemetry Bar -->
+            <div class="flex justify-between items-center font-mono text-xs text-[#94a3b8] border-b border-[#222538] pb-3 mb-6 font-medium">
+              <span class="text-[#c3f400] font-bold flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-[15px]">architecture</span>
+                <span id="design-monogram-left"></span>
+              </span>
+              <span id="design-monogram-right"></span>
+            </div>
+
+            <!-- Monogram Blueprint SVG Graphic Display -->
+            <div class="relative w-full h-56 sm:h-64 rounded-xl bg-[#06070c] border border-[#202336] flex items-center justify-center p-4 my-2 overflow-hidden">
+              <!-- Blueprint Dot Grid -->
+              <div class="absolute inset-0 bg-grid-dots opacity-40 pointer-events-none"></div>
+
+              <!-- Animated Construction Blueprint SVG -->
+              <svg id="monogram-svg" class="w-full h-full max-w-[280px] max-h-[190px]" viewBox="0 0 240 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Golden Ratio & Guide Circles -->
+                <circle cx="80" cy="80" r="48" stroke="rgba(239, 73, 64, 0.45)" stroke-dasharray="3 3" stroke-width="1"/>
+                <circle cx="160" cy="80" r="48" stroke="rgba(195, 244, 0, 0.45)" stroke-dasharray="3 3" stroke-width="1"/>
+                <!-- Baseline and cap lines -->
+                <line x1="10" y1="32" x2="230" y2="32" stroke="rgba(255, 255, 255, 0.22)" stroke-width="0.8"/>
+                <line x1="10" y1="80" x2="230" y2="80" stroke="rgba(255, 255, 255, 0.18)" stroke-width="0.8"/>
+                <line x1="10" y1="128" x2="230" y2="128" stroke="rgba(255, 255, 255, 0.22)" stroke-width="0.8"/>
+                
+                <!-- 45-degree angle tangent lines -->
+                <line x1="40" y1="128" x2="80" y2="32" stroke="rgba(239, 73, 64, 0.55)" stroke-width="1"/>
+                <line x1="80" y1="32" x2="105" y2="90" stroke="rgba(239, 73, 64, 0.55)" stroke-width="1"/>
+                <line x1="105" y1="90" x2="130" y2="32" stroke="rgba(239, 73, 64, 0.55)" stroke-width="1"/>
+                <line x1="130" y1="32" x2="170" y2="128" stroke="rgba(239, 73, 64, 0.55)" stroke-width="1"/>
+
+                <!-- The Heavy MO. Monogram Paths -->
+                <!-- Letter M -->
+                <path id="monogram-letter-m" d="M42 128V32L85 96L128 32V128" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                <!-- Letter O -->
+                <circle id="monogram-letter-o" cx="176" cy="80" r="32" stroke="#ffffff" stroke-width="8"/>
+                <!-- Accent Dot (Period) in Electric Lime -->
+                <circle id="monogram-period" cx="218" cy="124" r="5" fill="#c3f400" class="animate-pulse shadow-[0_0_8px_#c3f400]"/>
+                
+                <!-- Telemetry Label Tags -->
+                <text id="monogram-apex-label" x="44" y="24" fill="#ef4940" font-family="JetBrains Mono" font-size="8" font-weight="700"></text>
+                <text id="monogram-radius-label" x="162" y="24" fill="#c3f400" font-family="JetBrains Mono" font-size="8" font-weight="700"></text>
+                <text id="monogram-kerning-label" x="230" y="146" text-anchor="end" fill="#cbd5e1" font-family="JetBrains Mono" font-size="7" font-weight="600"></text>
+              </svg>
+            </div>
+
+            <!-- Description -->
+            <div class="mt-4">
+              <h3 id="design-monogram-title" class="font-sans text-xl font-bold text-white mb-2"></h3>
+              <p id="design-monogram-desc" class="font-sans text-[#cbd5e1] text-xs sm:text-sm leading-relaxed"></p>
+            </div>
+
+            <div class="pt-4 mt-4 border-t border-[#222538] flex items-center justify-between text-xs font-mono text-[#c3f400] font-semibold">
+              <span id="design-monogram-footer-left"></span>
+              <span id="design-monogram-footer-right"></span>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- CARD 2: Color Science & Token Architecture (5 cols) -->
+        <div class="lg:col-span-5 tilt-card group p-1.5 rounded-[2rem] bg-gradient-to-b from-[#141624] to-[#0c0d15] border border-[#25283c] hover:border-[#ef4940]/70 transition-[border-color,box-shadow] duration-300 shadow-2xl flex flex-col">
+          <div class="bg-[#0a0b12] rounded-[calc(2rem-0.375rem)] p-6 sm:p-8 flex flex-col justify-between h-full border border-[#1f2234] relative">
+            
+            <!-- Top Telemetry Bar -->
+            <div class="flex justify-between items-center font-mono text-xs text-[#94a3b8] border-b border-[#222538] pb-3 mb-6 font-medium">
+              <span class="text-[#ef4940] font-bold flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-[15px]">colorize</span>
+                <span id="design-color-left"></span>
+              </span>
+              <span id="design-color-right"></span>
+            </div>
+
+            <div>
+              <h3 id="design-color-title" class="font-sans text-xl font-bold text-white mb-2"></h3>
+              <p id="design-color-desc" class="font-sans text-[#cbd5e1] text-xs sm:text-sm leading-relaxed mb-6 font-normal"></p>
+
+              <!-- Interactive Color Swatches List -->
+              <div id="design-swatches" class="space-y-2.5"></div>
+            </div>
+
+            <div class="pt-4 mt-4 border-t border-[#222538] flex items-center justify-between text-xs font-mono text-[#ef4940] font-semibold" id="swatch-feedback">
+              <span id="design-color-footer-left"></span>
+              <span id="design-color-footer-right"></span>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- CARD 3: Typographic Tension & Specimen System (6 cols) -->
+        <div class="lg:col-span-6 tilt-card group p-1.5 rounded-[2rem] bg-gradient-to-b from-[#141624] to-[#0c0d15] border border-[#25283c] hover:border-[#c3f400]/70 transition-[border-color,box-shadow] duration-300 shadow-2xl flex flex-col">
+          <div class="bg-[#0a0b12] rounded-[calc(2rem-0.375rem)] p-6 sm:p-8 flex flex-col justify-between h-full border border-[#1f2234] relative">
+            
+            <!-- Top Telemetry Bar -->
+            <div class="flex justify-between items-center font-mono text-xs text-[#94a3b8] border-b border-[#222538] pb-3 mb-6 font-medium">
+              <span class="text-[#c3f400] font-bold flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-[15px]">match_case</span>
+                <span id="design-type-left"></span>
+              </span>
+              <span id="design-type-right"></span>
+            </div>
+
+            <!-- Typography Specimen Rows -->
+            <div id="design-specimens" class="space-y-4 my-auto"></div>
+
+            <div class="pt-4 mt-6 border-t border-[#222538] flex items-center justify-between text-xs font-mono text-[#c3f400] font-semibold">
+              <span id="design-type-footer-left"></span>
+              <span id="design-type-footer-right"></span>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- CARD 4: Motion Design, Color Grading & VFX Pipeline (6 cols) -->
+        <div class="lg:col-span-6 tilt-card group p-1.5 rounded-[2rem] bg-gradient-to-b from-[#141624] to-[#0c0d15] border border-[#25283c] hover:border-[#ef4940]/70 transition-[border-color,box-shadow] duration-300 shadow-2xl flex flex-col">
+          <div class="bg-[#0a0b12] rounded-[calc(2rem-0.375rem)] p-6 sm:p-8 flex flex-col justify-between h-full border border-[#1f2234] relative">
+            
+            <!-- Top Telemetry Bar -->
+            <div class="flex justify-between items-center font-mono text-xs text-[#94a3b8] border-b border-[#222538] pb-3 mb-6 font-medium">
+              <span class="text-[#ef4940] font-bold flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-[15px]">movie_filter</span>
+                <span id="design-motion-left"></span>
+              </span>
+              <span id="design-motion-right"></span>
+            </div>
+
+            <!-- Dual Visual Scope Window -->
+            <div class="grid grid-cols-2 gap-3 h-36 sm:h-44 my-auto">
+              <!-- Left: Film Viewport with Dynamic Aspect Masking -->
+              <div id="film-viewport" class="relative rounded-xl overflow-hidden border border-[#25283c] bg-black transition-all duration-500 ease-out shadow-md">
+                <img id="design-film-img" src="" alt="" class="w-full h-full object-cover">
+                <div id="design-film-badge" class="absolute bottom-1.5 left-2 font-mono text-[9px] text-white/90 bg-black/80 px-2 py-0.5 rounded backdrop-blur-sm border border-white/10 font-bold"></div>
+              </div>
+
+              <!-- Right: RGB Parade & Color Waveform -->
+              <div class="relative rounded-xl overflow-hidden border border-[#25283c] bg-[#07080c] shadow-md">
+                <img id="design-scope-img" src="" alt="" class="w-full h-full object-cover">
+                <div id="design-scope-badge" class="absolute top-1.5 right-2 font-mono text-[9px] text-[#ef4940] bg-black/80 px-2 py-0.5 rounded backdrop-blur-sm border border-white/10 font-bold"></div>
+              </div>
+            </div>
+
+            <!-- Interactive Aspect Ratio & Lens Mask Controller -->
+            <div class="flex items-center justify-between gap-1 p-1.5 rounded-lg bg-[#07080d] border border-[#202336] my-2 text-[10px] font-mono">
+              <span id="design-lens-label" class="text-[#94a3b8] pl-2 hidden sm:inline font-bold"></span>
+              <div id="design-aspect-buttons" class="flex items-center gap-1"></div>
+            </div>
+
+            <!-- Description -->
+            <div class="mt-4">
+              <h3 id="design-motion-title" class="font-sans text-xl font-bold text-white mb-2"></h3>
+              <p id="design-motion-desc" class="font-sans text-[#cbd5e1] text-xs sm:text-sm leading-relaxed"></p>
+            </div>
+
+            <div data-hide-if-empty="true" class="pt-4 mt-4 border-t border-[#222538] flex items-center justify-between text-xs font-mono text-[#ef4940] font-semibold">
+              <span id="design-motion-footer-left"></span>
+              <span id="design-motion-footer-right"></span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 3.6 ACADEMICS & STUDIES SECTION -->
+  <!-- ========================================== -->
+  <section id="academics" class="py-20 sm:py-28 bg-[#0b0c10] border-b border-[#1b1c26]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <div class="section-header lg:col-span-4">
+          <div id="academics-eyebrow" class="font-mono text-xs text-[#ef4940] uppercase tracking-wider mb-2 font-bold"></div>
+          <h2 class="font-sans text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            <span id="academics-heading-prefix"></span><span class="text-[#c3f400]">.</span>
+          </h2>
+          <p id="academics-intro" class="font-sans text-sm text-[#e2e8f0] mt-3 leading-relaxed font-normal"></p>
+        </div>
+
+        <div class="tilt-card academics-card lg:col-span-8 p-7 sm:p-8 rounded-2xl bg-gradient-to-b from-[#141624] to-[#0c0d15] border border-[#25283c] hover:border-[#c3f400]/60 shadow-2xl transition-[border-color,box-shadow] duration-300">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+            <h3 id="academics-degree" class="font-sans text-xl sm:text-2xl font-bold text-white"></h3>
+            <span id="academics-years" class="font-mono text-xs text-[#c3f400] font-bold px-3 py-1 rounded-full bg-[#16182a] border border-[#2c304c] shadow-sm whitespace-nowrap shrink-0 self-start sm:self-center"></span>
+          </div>
+
+          <div id="academics-institution" class="font-mono text-xs sm:text-sm text-[#ef4940] font-bold mb-4 drop-shadow-sm"></div>
+          <div id="academics-cgpa" class="font-mono text-xs text-[#cbd5e1] font-semibold -mt-2 mb-4"></div>
+
+          <p id="academics-summary" class="font-sans text-sm text-[#cbd5e1] leading-relaxed mb-6 font-normal"></p>
+
+          <div>
+            <span id="academics-coursework-label" class="font-mono text-[11px] text-[#94a3b8] block mb-2.5 uppercase tracking-wider font-bold"></span>
+            <div id="academics-coursework-list" class="flex flex-wrap gap-2"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 4. SELECTED WORKS SECTION -->
+  <!-- ========================================== -->
+  <section id="work" class="py-24 sm:py-32 relative bg-[#0b0c10] overflow-x-clip">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-10">
+      
+      <!-- Section Header -->
+      <div class="section-header flex flex-col md:flex-row md:items-end justify-between mb-14 sm:mb-16 gap-6">
+        <div>
+          <div id="work-eyebrow" class="font-mono text-xs text-[#ef4940] uppercase tracking-wider mb-2 font-bold"></div>
+          <h2 class="font-sans text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight">
+            <span id="work-heading-prefix"></span> <span id="work-heading-highlight" class="text-[#c3f400]"></span>
+          </h2>
+        </div>
+        <p id="work-subtitle" class="font-sans text-sm sm:text-base text-[#e2e8f0] max-w-md leading-relaxed font-normal"></p>
+      </div>
+
+      <!-- Showcase Windows Container -->
+      <div class="space-y-10 sm:space-y-12">
+        <div id="work-featured-list" class="space-y-10 sm:space-y-12"></div>
+
+        <!-- Bento Grid: Projects 4-7 -->
+        <div id="work-bento-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 4.5 SHAPE-MASKED ARCHITECTURAL PORTAL (PINNED SCROLLYTELLING STAGE) -->
+  <!-- ========================================== -->
+  <section id="portal" class="relative min-h-screen py-16 sm:py-24 bg-[#090a0f] border-t border-[#181924] flex flex-col justify-center items-center overflow-hidden">
+    <div class="max-w-7xl w-full mx-auto px-4 sm:px-6 md:px-10 flex flex-col items-center">
+      
+      <!-- Section Header -->
+      <div class="section-header max-w-3xl mx-auto text-center mb-8 sm:mb-12">
+        <div class="inline-flex items-center px-3.5 py-1 rounded-full bg-[#141520] border border-[#272938] text-[11px] font-mono text-[#c3f400] uppercase tracking-wider mb-3 font-semibold shadow-sm">
+          <span id="portal-badge"></span>
+        </div>
+        <h2 class="font-sans text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+          <span id="portal-heading-prefix"></span> <span id="portal-heading-highlight" class="text-[#ef4940]"></span>
+        </h2>
+        <p id="portal-description" class="font-sans text-xs sm:text-sm text-[#e2e8f0] mt-2 max-w-xl mx-auto leading-relaxed font-normal"></p>
+      </div>
+
+      <!-- Pinned / Scrubbed Geometric Aperture Window -->
+      <div class="relative w-full h-[52vh] min-h-[380px] max-h-[580px] rounded-3xl overflow-hidden border-2 border-[#282c44] bg-[#06070c] shadow-[0_0_50px_rgba(0,0,0,0.95)] flex items-center justify-center">
+        
+        <!-- Shape Masked Inner Container with dynamic clip-path -->
+        <div id="aperture-mask" class="shape-mask-viewport relative w-full h-full overflow-hidden flex items-center justify-center will-change-transform">
+          
+          <!-- Deep Parallax Background Image Layer -->
+          <div id="aperture-image" class="absolute -inset-16 bg-cover bg-center filter brightness-95 contrast-115 will-change-transform"></div>
+          
+          <!-- Dark Cybernetic Grid & Reticle Overlay -->
+          <div class="absolute inset-0 bg-grid-dots opacity-40 pointer-events-none"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-[#090a0f] via-transparent to-[#090a0f]/80 pointer-events-none"></div>
+
+          <!-- Futuristic HUD Reticles & Data Scope Inside the Shape -->
+          <div id="portal-hud-content" class="relative z-10 w-full max-w-4xl px-6 flex flex-col justify-between h-full py-8 pointer-events-none select-none will-change-transform">
+            
+            <!-- Top HUD Bar -->
+            <div class="flex justify-between items-center font-mono text-xs text-[#c3f400] border-b border-white/20 pb-3 backdrop-blur-md font-semibold">
+              <span class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#ef4940] animate-ping shadow-[0_0_8px_#ef4940]"></span>
+                <span id="portal-hud-top-left"></span>
+              </span>
+              <span id="portal-hud-coords" class="hidden sm:inline text-[#cbd5e1]"></span>
+              <span id="portal-hud-top-right" class="text-[#ef4940] font-bold"></span>
+            </div>
+
+            <!-- Center Telemetry Reticle -->
+            <div class="my-auto text-center space-y-3">
+              <div id="portal-hud-center-badge" class="inline-block max-w-[76%] lg:max-w-none mx-auto whitespace-normal text-center px-3 lg:px-4 py-1 lg:py-1.5 rounded-2xl lg:rounded-full bg-[#0a0b14]/90 border border-[#ef4940] text-white font-mono text-[10px] lg:text-sm leading-snug lg:leading-normal tracking-tight lg:tracking-wider uppercase backdrop-blur-md shadow-2xl font-bold"></div>
+              <h3 id="portal-hud-center-title" class="w-fit max-w-[78%] lg:max-w-none mx-auto font-sans font-black text-xl sm:text-3xl lg:text-4xl text-white tracking-tight leading-tight drop-shadow-lg"></h3>
+            </div>
+
+            <!-- Bottom HUD Bar -->
+            <div id="portal-hud-bottom-bar" data-hide-if-empty="true" class="flex justify-between items-center font-mono text-[11px] text-[#cbd5e1] border-t border-white/20 pt-3 backdrop-blur-md font-medium">
+              <span id="portal-hud-rtt" class="text-[#c3f400] font-bold"></span>
+              <span id="portal-hud-bottom-center" class="text-white font-semibold"></span>
+              <span id="portal-hud-bottom-right" class="text-[#ef4940] font-bold"></span>
+            </div>
+
+          </div>
+
+          <!-- Cybernetic Corner Reticle Borders on the Shape Window -->
+          <div class="absolute top-4 left-4 w-7 h-7 border-t-2 border-l-2 border-[#ef4940] drop-shadow-[0_0_8px_rgba(239,73,64,0.8)] pointer-events-none"></div>
+          <div class="absolute top-4 right-4 w-7 h-7 border-t-2 border-r-2 border-[#ef4940] drop-shadow-[0_0_8px_rgba(239,73,64,0.8)] pointer-events-none"></div>
+          <div class="absolute bottom-4 left-4 w-7 h-7 border-b-2 border-l-2 border-[#c3f400] drop-shadow-[0_0_8px_rgba(195,244,0,0.8)] pointer-events-none"></div>
+          <div class="absolute bottom-4 right-4 w-7 h-7 border-b-2 border-r-2 border-[#c3f400] drop-shadow-[0_0_8px_rgba(195,244,0,0.8)] pointer-events-none"></div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 5. PRODUCTION ARSENAL SECTION -->
+  <!-- ========================================== -->
+  <section id="stack" class="py-24 sm:py-32 bg-[#08090e] border-t border-[#181922] relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-10">
+      
+      <!-- Section Header -->
+      <div class="section-header mb-14">
+        <!-- Top Pill Badge -->
+        <div id="stack-eyebrow" class="inline-block px-3.5 py-1 rounded-full bg-[#121422] border border-[#282c44] text-[11px] font-mono text-[#c3f400] tracking-wider uppercase mb-3 font-semibold shadow-sm"></div>
+        <!-- Title with Yellow Period -->
+        <h2 class="font-sans text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
+          <span id="stack-heading-prefix"></span><span class="text-[#c3f400]">.</span>
+        </h2>
+      </div>
+
+      <!-- 4 Tech Stack Bento Cards -->
+      <div id="stack-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 5.5 ENGINEERING MILESTONES & HONORS -->
+  <!-- ========================================== -->
+  <section id="milestones" class="py-24 sm:py-32 bg-[#0b0c10] border-t border-[#181922] overflow-x-clip">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-10">
+      
+      <div class="section-header mb-14">
+        <div id="milestones-eyebrow" class="font-mono text-xs text-[#ef4940] uppercase tracking-wider mb-2 font-bold"></div>
+        <h2 class="font-sans text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
+          <span id="milestones-heading-prefix"></span><span class="text-[#c3f400]">.</span>
+        </h2>
+      </div>
+
+      <!-- Vertical Milestones Track Timeline -->
+      <div class="relative">
+        <!-- Vertical glowing guideline -->
+        <div class="absolute left-0 top-3 bottom-3 w-[2px] bg-[#24273c] hidden md:block">
+          <div id="milestone-progress-line" class="absolute top-0 left-0 w-full bg-gradient-to-b from-[#ef4940] via-[#c3f400] to-[#ef4940] h-0 shadow-[0_0_12px_rgba(239,73,64,0.8)]"></div>
+          <!-- Running glow node -->
+          <div id="milestone-runner" class="absolute -left-[5px] top-0 w-3 h-3 rounded-full bg-[#c3f400] shadow-[0_0_10px_#c3f400] -translate-y-1/2"></div>
+        </div>
+
+        <div id="milestones-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6 md:pl-8"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 5.75 INTERNSHIPS & EXPERIENCE -->
+  <!-- ========================================== -->
+  <section id="experience" class="py-24 sm:py-32 bg-[#08090e] border-t border-[#181922] overflow-x-clip">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-10">
+      <div class="section-header mb-14">
+        <div id="experience-eyebrow" class="font-mono text-xs text-[#ef4940] uppercase tracking-wider mb-2 font-bold"></div>
+        <h2 class="font-sans text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
+          <span id="experience-heading-prefix"></span><span class="text-[#c3f400]">.</span>
+        </h2>
+      </div>
+      <div id="experience-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 6. COMMISSION / HIRING GATEWAY (CTA) -->
+  <!-- ========================================== -->
+  <section id="terminal" class="relative py-28 sm:py-36 bg-[#090a0e] overflow-hidden">
+    <!-- Futuristic Red Laser Corridor Stage Background -->
+    <div id="cta-stage-bg" class="absolute inset-0 bg-cover bg-center pointer-events-none opacity-90 will-change-transform"></div>
+    
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 relative z-10 text-center flex flex-col items-center">
+      
+      <!-- Section Header -->
+      <div class="section-header flex flex-col items-center">
+        <!-- Status Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0e0f16]/90 border border-[#c3f400]/40 backdrop-blur-md mb-8">
+          <span class="w-2 h-2 rounded-full bg-[#c3f400] animate-ping"></span>
+          <span id="terminal-availability" class="font-mono text-xs text-[#c3f400] tracking-wider uppercase font-semibold"></span>
+        </div>
+
+        <!-- Main Headline -->
+        <h2 class="font-sans text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-tight mb-8">
+          <span id="terminal-headline-prefix"></span> <br>
+          <span id="terminal-headline-highlight" class="text-[#ef4940] text-glow-red"></span>
+        </h2>
+
+        <p id="terminal-description" class="font-sans text-sm sm:text-base text-[#e2e8f0] max-w-xl mx-auto mb-8 leading-relaxed font-normal"></p>
+      </div>
+
+      <!-- Glassmorphic Copy Email Box -->
+      <div class="w-full max-w-md mx-auto p-2.5 bg-[#0c0e18]/95 border-2 border-[#2d3250] rounded-2xl flex items-center justify-between shadow-[0_0_35px_rgba(195,244,0,0.15)] backdrop-blur-lg mb-8 relative">
+        <div class="flex items-center gap-2.5 pl-4 overflow-hidden">
+          <span class="material-symbols-outlined text-[#ef4940] text-[20px] shrink-0">alternate_email</span>
+          <span class="font-mono text-xs sm:text-sm text-white font-semibold truncate" id="email-address"></span>
+        </div>
+        
+        <!-- Copy Button in Bright Neon Lime -->
+        <button 
+          id="copy-btn" 
+          onclick="copyEmail()" 
+          class="magnetic-btn px-5 py-2.5 rounded-xl bg-[#c3f400] hover:bg-[#d8ff1a] text-[#08090c] font-mono text-xs font-black transition-colors duration-150 shrink-0 active:scale-95 shadow-lg shadow-[#c3f400]/30 flex items-center gap-1.5"
+        >
+          <span id="copy-label"></span>
+        </button>
+
+        <!-- Sparkle Star Accent Icon floating nearby -->
+        <div class="absolute -right-7 -bottom-3 text-white/30 hidden sm:block">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5L12 0Z"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Social Links Bar with Dark Glass Backdrop -->
+      <div id="terminal-socials" class="mt-4 inline-flex flex-wrap items-center justify-center gap-3 sm:gap-6 px-6 py-2.5 rounded-full bg-[#0c0e18]/95 border border-[#2d3250] backdrop-blur-md shadow-2xl text-xs font-mono text-[#cbd5e1]"></div>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 7. FOOTER -->
+  <!-- ========================================== -->
+  <footer class="w-full bg-[#07080c] border-t border-[#1a1b24]">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center px-4 sm:px-6 md:px-10 py-8 gap-6">
+      
+      <!-- Brand Logo -->
+      <div id="footer-brand" class="font-sans text-2xl sm:text-3xl font-black text-[#ef4940] tracking-tight"></div>
+
+      <!-- Center Links -->
+      <div id="footer-links" class="flex flex-wrap items-center justify-center gap-6 text-xs font-mono text-[#cbd5e1]"></div>
+
+      <!-- Copyright -->
+      <div id="footer-copyright" class="font-mono text-[11px] text-[#94a3b8] text-center md:text-right font-medium"></div>
+    </div>
+  </footer>
+
+  <!-- ========================================== -->
+  <!-- COMMAND PALETTE MODAL (Cmd+K / Ctrl+K) -->
+  <!-- ========================================== -->
+  <dialog id="cmd-palette" class="bg-transparent backdrop:bg-black/80 backdrop:backdrop-blur-md p-4 max-w-xl w-full m-auto focus:outline-none">
+    <div class="bg-[#0f111d] border border-[#2d324d] rounded-2xl shadow-[0_0_50px_rgba(0,0,0,0.8)] overflow-hidden">
+      <!-- Search Input -->
+      <div class="p-4 border-b border-[#22263d] flex items-center gap-3">
+        <span class="material-symbols-outlined text-[#ef4940] text-[20px]">search</span>
+        <input id="palette-search" type="text" placeholder="" class="w-full bg-transparent border-none text-sm text-white focus:outline-none font-mono placeholder:text-[#94a3b8]" autocomplete="off"/>
+        <button onclick="toggleCommandPalette()" class="text-xs font-mono text-[#94a3b8] hover:text-white px-2 py-0.5 rounded border border-[#2d324d]">ESC</button>
+      </div>
+      <!-- Items list -->
+      <div class="p-3 max-h-80 overflow-y-auto space-y-1 font-mono text-xs" id="palette-items" data-lenis-prevent></div>
+    </div>
+  </dialog>
+
+  <!-- ========================================== -->
+  <!-- SCRIPT: INTERACTION & ANIMATION ENGINES -->
+  <!-- ========================================== -->
+  <script>
+    // ========================================================
+    // 0. PROFILE HYDRATION ENGINE (SYNCHRONOUS BEFORE MOTION INIT)
+    // ========================================================
+    function profileVal(node) {
+      return node && typeof node === 'object' && 'value' in node ? node.value : node;
+    }
+
+    function isBlank(val) {
+      const unwrapped = profileVal(val);
+      if (unwrapped === null || unwrapped === undefined) return true;
+      const s = String(unwrapped).trim();
+      return s === '' || s.toUpperCase() === 'TBD';
+    }
+
+    function escapeHtml(str) {
+      return String(str == null ? '' : str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    (function renderProfile(P) {
+      if (!P) return;
+      const v = profileVal;
+      const esc = escapeHtml;
+      const setText = (id, node) => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const val = v(node);
+        if (isBlank(val)) {
+          const parent = el.parentElement;
+          el.remove();
+          if (parent && parent.dataset.hideIfEmpty === 'true' && parent.children.length === 0) {
+            parent.remove();
+          }
+          return;
+        }
+        el.textContent = String(val);
+      };
+      const renderHudRow = (slots, className) => {
+        const active = slots.filter((s) => s && !isBlank(s.check));
+        if (!active.length) return '';
+        let justifyCls = 'justify-between';
+        if (active.length === 1) {
+          if (active[0].align === 'center') justifyCls = 'justify-center';
+          else if (active[0].align === 'right') justifyCls = 'justify-end';
+        }
+        return `<div class="flex ${justifyCls} items-center ${className}">${active.map((s) => s.html).join('')}</div>`;
+      };
+
+      // 1. Navbar
+      const navBrand = document.getElementById('nav-brand');
+      if (navBrand) {
+        navBrand.innerHTML = esc(v(P.identity.nameUpper)) + '<span class="text-[#ef4940]">.</span>';
+      }
+      const navLinks = document.getElementById('nav-links');
+      if (navLinks) {
+        navLinks.innerHTML =
+          P.navigation.links
+            .map(
+              (link) =>
+                `<a href="${esc(link.href)}" class="text-xs font-mono uppercase tracking-widest text-[#cbd5e1] hover:text-[#c3f400] transition-colors font-medium">${esc(v(link.label))}</a>`
+            )
+            .join('') +
+          `<button onclick="toggleCommandPalette()" class="magnetic-btn inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#16182a] hover:bg-[#20233c] border border-[#2c304c] text-[11px] font-mono text-[#cbd5e1] hover:text-white transition-colors shadow-sm" title="Quick Navigation (Cmd+K / Ctrl+K)"><span>${esc(v(P.navigation.paletteKeyLabel))}</span></button>`;
+      }
+      const email = v(P.contact.email);
+      const navCta = document.getElementById('nav-cta');
+      if (navCta) {
+        navCta.href = 'mailto:' + email;
+        navCta.textContent = v(P.navigation.ctaLabel);
+      }
+
+      // 2. Hero
+      setText('hero-location', P.identity.location);
+      setText('hero-edu-short', P.identity.educationShort);
+      setText('hero-availability', P.identity.availability);
+      const githubSocial = P.socials.find((s) => s.id === 'github');
+      const heroGithub = document.getElementById('hero-github-link');
+      if (heroGithub && githubSocial) {
+        heroGithub.href = v(githubSocial.href);
+        heroGithub.textContent = v(githubSocial.display) + ' ↗';
+      }
+      setText('hero-backdrop-text', P.hero.backdropText);
+      const portraitImg = document.getElementById('hero-portrait-img');
+      if (portraitImg) {
+        portraitImg.src = v(P.identity.portrait.src);
+        portraitImg.alt = v(P.identity.portrait.alt);
+      }
+      setText('hero-greeting', P.hero.greeting);
+      const heroName = document.getElementById('hero-name');
+      if (heroName) {
+        heroName.innerHTML = esc(v(P.identity.nameUpper)) + '<span class="text-[#ef4940]">.</span>';
+      }
+      setText('hero-tagline', P.identity.tagline);
+      setText('hero-bio-badge', P.hero.bioBadge);
+      setText('hero-bio-text', P.identity.bio);
+      setText('hero-cursor-handle', P.identity.shortHandle);
+      setText('hero-primary-cta-label', P.hero.primaryCtaLabel);
+      const heroSecondaryCta = document.getElementById('hero-secondary-cta');
+      if (heroSecondaryCta) heroSecondaryCta.href = 'mailto:' + email;
+      setText('hero-secondary-cta-label', P.hero.secondaryCtaLabel);
+
+      // 3. Approach / Philosophy
+      setText('philosophy-eyebrow', P.approach.eyebrow);
+      setText('philosophy-headline-prefix', P.approach.headlinePrefix);
+      setText('philosophy-headline-highlight', P.approach.headlineHighlight);
+      setText('philosophy-summary', P.approach.summary);
+      const philCards = document.getElementById('philosophy-cards');
+      if (philCards) {
+        philCards.innerHTML = P.approach.cards
+          .map((card) => {
+            const hoverCls =
+              card.accent === 'lime'
+                ? 'hover:border-[#c3f400]/70 hover:shadow-[0_0_30px_rgba(195,244,0,0.15)]'
+                : 'hover:border-[#ef4940]/70 hover:shadow-[0_0_30px_rgba(239,73,64,0.15)]';
+            return `<div class="tilt-card bento-card group relative p-7 sm:p-8 rounded-2xl bg-gradient-to-b from-[#141624] to-[#0c0d15] border border-[#25283c] ${hoverCls} transition-[border-color,box-shadow] duration-300 flex flex-col justify-between shadow-2xl">
+              <div>
+                <div class="font-mono text-xs text-[#ef4940] font-bold tracking-wider mb-3">${esc(v(card.eyebrow))}</div>
+                <h3 class="font-sans text-xl sm:text-[22px] text-white font-bold mb-3">${esc(v(card.title))}</h3>
+                <p class="font-sans text-[#cbd5e1] text-sm leading-relaxed mb-6 font-normal">${esc(v(card.description))}</p>
+              </div>
+              <div class="pt-4 border-t border-[#232638] flex items-center justify-between font-mono text-[11px] text-[#c3f400] tracking-wider font-semibold">
+                <span>${esc(v(card.footerTags))}</span>
+                <span class="material-symbols-outlined text-[16px]">${esc(card.icon)}</span>
+              </div>
+            </div>`;
+          })
+          .join('');
+      }
+
+      // 4. Design Lab
+      setText('design-eyebrow', P.designLab.eyebrow);
+      setText('design-heading-prefix', P.designLab.headingPrefix);
+      setText('design-heading-highlight', P.designLab.headingHighlight);
+      setText('design-subtitle', P.designLab.subtitle);
+
+      const mc = P.designLab.monogramCard;
+      setText('design-monogram-left', mc.headerLeft);
+      setText('design-monogram-right', mc.headerRight);
+      setText('monogram-apex-label', mc.apexLabel);
+      setText('monogram-radius-label', mc.radiusLabel);
+      setText('monogram-kerning-label', mc.kerningLabel);
+      setText('design-monogram-title', mc.title);
+      setText('design-monogram-desc', mc.description);
+      setText('design-monogram-footer-left', mc.footerLeft);
+      setText('design-monogram-footer-right', mc.footerRight);
+
+      const cc = P.designLab.colorCard;
+      setText('design-color-left', cc.headerLeft);
+      setText('design-color-right', cc.headerRight);
+      setText('design-color-title', cc.title);
+      setText('design-color-desc', cc.description);
+      const swatchesEl = document.getElementById('design-swatches');
+      if (swatchesEl) {
+        const swatchStyles = {
+          crimson: {
+            hoverBorder: 'hover:border-[#ef4940]/70',
+            dot: 'bg-[#ef4940] shadow-[0_0_12px_rgba(239,73,64,0.6)]',
+            titleHover: 'group-hover/swatch:text-[#ef4940]',
+            hexText: 'text-[#ef4940]',
+          },
+          lime: {
+            hoverBorder: 'hover:border-[#c3f400]/70',
+            dot: 'bg-[#c3f400] shadow-[0_0_12px_rgba(195,244,0,0.6)]',
+            titleHover: 'group-hover/swatch:text-[#c3f400]',
+            hexText: 'text-[#c3f400]',
+          },
+          dark: {
+            hoverBorder: 'hover:border-white/50',
+            dot: 'bg-[#0b0c10] border border-[#3b3f5c]',
+            titleHover: '',
+            hexText: 'text-[#e2e8f0]',
+          },
+          bezel: {
+            hoverBorder: 'hover:border-white/50',
+            dot: 'bg-[#151622] border border-[#3b3f5c]',
+            titleHover: '',
+            hexText: 'text-[#e2e8f0]',
+          },
+        };
+        swatchesEl.innerHTML = '';
+        cc.swatches.forEach((sw) => {
+          const st = swatchStyles[sw.variant] || swatchStyles.dark;
+          const btn = document.createElement('button');
+          btn.className = `w-full flex items-center justify-between p-2.5 rounded-xl bg-[#121422] hover:bg-[#1a1c2e] border border-[#272b40] ${st.hoverBorder} transition-colors duration-150 group/swatch text-left active:scale-[0.98] shadow-sm`;
+          btn.addEventListener('click', () => copyHex(v(sw.hex), v(sw.name)));
+          btn.innerHTML = `<div class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-lg ${st.dot} shrink-0"></span>
+              <div>
+                <div class="font-mono text-xs text-white font-semibold ${st.titleHover} transition-colors">${esc(v(sw.name))}</div>
+                <div class="font-mono text-[10px] text-[#94a3b8]">${esc(v(sw.role))}</div>
+              </div>
+            </div>
+            <span class="font-mono text-xs ${st.hexText} font-bold">${esc(v(sw.hex))}</span>`;
+          swatchesEl.appendChild(btn);
+        });
+      }
+      setText('design-color-footer-left', cc.footerLeft);
+      setText('design-color-footer-right', cc.footerRight);
+
+      const tc = P.designLab.typographyCard;
+      setText('design-type-left', tc.headerLeft);
+      setText('design-type-right', tc.headerRight);
+      const specimensEl = document.getElementById('design-specimens');
+      if (specimensEl) {
+        const specimenStyles = {
+          anton: {
+            labelClass: 'text-[#ef4940]',
+            sampleClass: "font-['Anton'] text-3xl sm:text-4xl text-white tracking-wide uppercase leading-tight",
+          },
+          grotesk: {
+            labelClass: 'text-[#c3f400]',
+            sampleClass: 'font-sans text-xl sm:text-2xl text-white font-extrabold tracking-tight',
+          },
+          mono: {
+            labelClass: 'text-[#94a3b8]',
+            sampleClass: 'font-mono text-xs sm:text-sm text-[#f1f5f9] font-medium',
+          },
+        };
+        specimensEl.innerHTML = tc.specimens
+          .filter((sp) => !isBlank(sp.sampleText))
+          .map((sp) => {
+            const st = specimenStyles[sp.styleVariant] || specimenStyles.mono;
+            const headerRow = renderHudRow(
+              [
+                { check: sp.fontLabel, align: 'left', html: `<span>${esc(v(sp.fontLabel))}</span>` },
+                { check: sp.weightLabel, align: 'right', html: `<span>${esc(v(sp.weightLabel))}</span>` },
+              ],
+              `mb-1 font-mono text-[10px] ${st.labelClass} font-bold`
+            );
+            return `<div class="p-3.5 rounded-xl bg-[#0c0d15] border border-[#222538]">
+              ${headerRow}
+              <div class="${st.sampleClass}">${esc(v(sp.sampleText))}</div>
+            </div>`;
+          })
+          .join('');
+      }
+      setText('design-type-footer-left', tc.footerLeft);
+      setText('design-type-footer-right', tc.footerRight);
+
+      const moc = P.designLab.motionCard;
+      setText('design-motion-left', moc.headerLeft);
+      setText('design-motion-right', moc.headerRight);
+      const filmImg = document.getElementById('design-film-img');
+      if (filmImg) {
+        filmImg.src = v(moc.filmViewport.image.src);
+        filmImg.alt = v(moc.filmViewport.alt);
+      }
+      const filmBadgeEl = document.getElementById('design-film-badge');
+      if (filmBadgeEl) {
+        const filmBadgeVal = v(moc.filmViewport.badge);
+        if (isBlank(filmBadgeVal)) {
+          filmBadgeEl.remove();
+        } else {
+          filmBadgeEl.textContent = filmBadgeVal;
+          filmBadgeEl.classList.remove('hidden');
+        }
+      }
+      const scopeImg = document.getElementById('design-scope-img');
+      if (scopeImg) {
+        scopeImg.src = v(moc.scopeViewport.image.src);
+        scopeImg.alt = v(moc.scopeViewport.alt);
+      }
+      setText('design-scope-badge', moc.scopeViewport.badge);
+      setText('design-lens-label', moc.lensLabel);
+      const aspectBtnsEl = document.getElementById('design-aspect-buttons');
+      if (aspectBtnsEl) {
+        const aspectClasses = {
+          cinema: 'bg-[#181a2c] text-white hover:text-[#ef4940] border border-[#2b304c] font-bold',
+          imax: 'hover:bg-[#181a2c] text-[#cbd5e1] hover:text-white border border-[#222538] font-medium',
+          stadium: 'hover:bg-[#181a2c] text-[#cbd5e1] hover:text-[#c3f400] border border-[#222538] font-medium',
+          full: 'hover:bg-[#181a2c] text-[#cbd5e1] hover:text-white border border-[#222538] font-medium',
+        };
+        aspectBtnsEl.innerHTML = '';
+        moc.aspectOptions.forEach((opt) => {
+          const btn = document.createElement('button');
+          btn.className = `aspect-btn magnetic-btn px-2.5 py-0.5 rounded ${aspectClasses[opt.id] || aspectClasses.full} transition-colors active:scale-95 text-[10px]`;
+          btn.dataset.aspect = opt.id;
+          btn.textContent = v(opt.label);
+          btn.addEventListener('click', () => setAspectMask(opt.id));
+          aspectBtnsEl.appendChild(btn);
+        });
+      }
+      setText('design-motion-title', moc.title);
+      setText('design-motion-desc', moc.description);
+      setText('design-motion-footer-left', moc.footerLeft);
+      setText('design-motion-footer-right', moc.footerRight);
+
+      // 5. Education
+      setText('academics-eyebrow', P.education.eyebrow);
+      setText('academics-heading-prefix', P.education.headingPrefix);
+      setText('academics-intro', P.education.intro);
+      setText('academics-degree', P.education.degree);
+      setText('academics-years', P.education.years);
+      setText('academics-institution', P.education.institution);
+      const cgpaEl = document.getElementById('academics-cgpa');
+      if (cgpaEl) {
+        if (isBlank(P.education.cgpa)) {
+          cgpaEl.remove();
+        } else {
+          cgpaEl.textContent = 'CGPA ' + v(P.education.cgpa);
+        }
+      }
+      setText('academics-summary', P.education.summary);
+      setText('academics-coursework-label', P.education.courseworkLabel);
+      const courseworkEl = document.getElementById('academics-coursework-list');
+      if (courseworkEl) {
+        courseworkEl.innerHTML = P.education.coursework
+          .map(
+            (cw) =>
+              `<span class="font-mono text-xs px-3 py-1 rounded-full bg-[#16182a] border border-[#2c304c] text-[#f1f5f9] hover:border-[#c3f400]/70 hover:text-[#c3f400] transition-colors font-medium">${esc(v(cw))}</span>`
+          )
+          .join('');
+      }
+
+      // 6. Selected Projects
+      setText('work-eyebrow', P.projects.eyebrow);
+      setText('work-heading-prefix', P.projects.headingPrefix);
+      setText('work-heading-highlight', P.projects.headingHighlight);
+      setText('work-subtitle', P.projects.subtitle);
+
+      const featuredEl = document.getElementById('work-featured-list');
+      if (featuredEl) {
+        featuredEl.innerHTML = P.projects.featured
+          .map((proj) => {
+            const isLime = proj.accent === 'lime';
+            const cardHover = isLime
+              ? 'hover:border-[#c3f400]/60 hover:shadow-[0_0_35px_rgba(195,244,0,0.12)]'
+              : 'hover:border-[#ef4940]/60 hover:shadow-[0_0_35px_rgba(239,73,64,0.15)]';
+            const statusColor = isLime ? 'text-[#c3f400]' : 'text-[#ef4940]';
+            const firstTagStyle = isLime
+              ? 'text-[#c3f400] border-[#2c304c] font-bold'
+              : 'text-[#ef4940] border-[#3d1d23] font-bold';
+            const tagsHtml = proj.techTags
+              .filter((tag) => !isBlank(tag))
+              .map((tag, i) => {
+                const cls = i === 0 ? firstTagStyle : 'text-[#f1f5f9] border-[#2c304c] font-medium';
+                return `<span class="px-3 py-1 rounded-full bg-[#181a2e] text-mono text-xs border ${cls}">${esc(v(tag))}</span>`;
+              })
+              .join('');
+            const badgeHtml = !isBlank(proj.competitionBadge)
+              ? `<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#18121a] border border-[#ef4940]/50 text-xs font-mono text-[#ef4940] font-bold shadow-sm">
+                  <span class="material-symbols-outlined text-[14px]">military_tech</span>
+                  <span>${esc(v(proj.competitionBadge))}</span>
+                </div>`
+              : '';
+            const metricsHtml = (proj.metrics || [])
+              .filter((m) => !isBlank(m.value) && !isBlank(m.label))
+              .map((m) => {
+                const valColor = m.highlight ? (isLime ? 'text-[#c3f400]' : 'text-[#ef4940]') : 'text-white';
+                return `<div>
+                  <div class="font-sans font-black text-2xl sm:text-3xl ${valColor}">${esc(v(m.value))}</div>
+                  <div class="font-mono text-[11px] text-[#94a3b8] uppercase tracking-wider font-semibold">${esc(v(m.label))}</div>
+                </div>`;
+              })
+              .join('');
+            const metricsBlock = metricsHtml
+              ? `<div class="pt-4 flex flex-wrap items-center gap-x-6 gap-y-3 sm:gap-8 border-t border-[#222538]">${metricsHtml}</div>`
+              : '';
+
+            const githubUrl = proj.links && v(proj.links.github);
+            const demoUrl = proj.links && v(proj.links.demo);
+            const linksHtml =
+              !isBlank(githubUrl) || !isBlank(demoUrl)
+                ? `<div class="pt-3 flex flex-wrap items-center gap-4 text-xs font-mono">
+                    ${!isBlank(githubUrl) ? `<a href="${esc(githubUrl)}" target="_blank" rel="noopener noreferrer" class="text-[#cbd5e1] hover:text-[#c3f400] transition-colors">GITHUB ↗</a>` : ''}
+                    ${!isBlank(demoUrl) ? `<a href="${esc(demoUrl)}" target="_blank" rel="noopener noreferrer" class="text-[#cbd5e1] hover:text-[#ef4940] transition-colors">LIVE DEMO ↗</a>` : ''}
+                  </div>`
+                : '';
+
+            let viewportHtml = '';
+            const vp = proj.viewport;
+            if (vp.type === 'radar') {
+              const radarRightHtml =
+                !isBlank(vp.topRightPrimary) || !isBlank(vp.topRightSecondary)
+                  ? `<div class="text-right">
+                      ${!isBlank(vp.topRightPrimary) ? `<div class="text-[#c3f400] font-bold">${esc(v(vp.topRightPrimary))}</div>` : ''}
+                      ${!isBlank(vp.topRightSecondary) ? `<div>${esc(v(vp.topRightSecondary))}</div>` : ''}
+                    </div>`
+                  : '';
+              const radarTopRow = renderHudRow(
+                [
+                  { check: vp.topLeft, align: 'left', html: `<span class="text-[#cbd5e1]">${esc(v(vp.topLeft))}</span>` },
+                  {
+                    check: !isBlank(vp.topRightPrimary) ? vp.topRightPrimary : vp.topRightSecondary,
+                    align: 'right',
+                    html: radarRightHtml,
+                  },
+                ],
+                'font-mono text-[10px] text-[#94a3b8] font-medium'
+              );
+              const radarBottomRow = renderHudRow(
+                [
+                  { check: vp.bottomLeft, align: 'left', html: `<span class="text-[#c3f400] font-bold">${esc(v(vp.bottomLeft))}</span>` },
+                  { check: vp.bottomRight, align: 'right', html: `<span class="text-[#cbd5e1]">${esc(v(vp.bottomRight))}</span>` },
+                ],
+                'font-mono text-[10px] text-[#94a3b8] font-medium'
+              );
+              viewportHtml = `<div class="lg:col-span-6 relative h-64 sm:h-72 rounded-xl bg-[#06070c] border border-[#202336] overflow-hidden flex flex-col justify-between p-4 shadow-inner">
+                ${radarTopRow}
+                <div class="relative w-full flex-1 flex items-center justify-center my-auto">
+                  <canvas id="${esc(vp.canvasId)}" width="280" height="150" class="max-w-full"></canvas>
+                </div>
+                ${radarBottomRow}
+              </div>`;
+            } else if (vp.type === 'waveform') {
+              const waveTopRow = renderHudRow(
+                [
+                  { check: vp.topLeft, align: 'left', html: `<span class="text-[#cbd5e1]">${esc(v(vp.topLeft))}</span>` },
+                  { check: vp.topCenter, align: 'center', html: `<span class="text-[#c3f400] font-bold">${esc(v(vp.topCenter))}</span>` },
+                  { check: vp.topRight, align: 'right', html: `<span class="text-white">${esc(v(vp.topRight))}</span>` },
+                ],
+                'font-mono text-[10px] text-[#94a3b8] font-medium'
+              );
+              const waveBottomRow = renderHudRow(
+                [
+                  { check: vp.rttValue, align: 'left', html: `<span class="text-[#cbd5e1]">RTT: ${esc(v(vp.rttValue))}</span>` },
+                  { check: vp.bottomCenter, align: 'center', html: `<span class="text-[#ef4940] font-bold">${esc(v(vp.bottomCenter))}</span>` },
+                  { check: vp.lossValue, align: 'right', html: `<span class="text-[#c3f400]">LOSS: ${esc(v(vp.lossValue))}</span>` },
+                ],
+                'font-mono text-[10px] text-[#94a3b8] font-medium'
+              );
+              viewportHtml = `<div class="lg:col-span-6 relative h-64 sm:h-72 rounded-xl bg-[#06070c] border border-[#202336] overflow-hidden flex flex-col justify-between p-4 shadow-inner">
+                ${waveTopRow}
+                <div class="relative w-full flex-1 flex items-center justify-center my-auto">
+                  <canvas id="${esc(vp.canvasId)}" width="400" height="130" class="w-full h-full"></canvas>
+                </div>
+                ${waveBottomRow}
+              </div>`;
+            } else if (vp.type === 'scrubber') {
+              const hasImgs = Array.isArray(proj.images) && proj.images.length >= 2;
+              const imgsBlock = hasImgs
+                ? `<div class="grid grid-cols-2 gap-3 h-36 sm:h-40">
+                  <div class="relative rounded-lg overflow-hidden border border-[#25283c] bg-black">
+                    <img src="${esc(v(proj.images[0].src))}" alt="${esc(v(proj.images[0].alt))}" class="w-full h-full object-cover">
+                    ${!isBlank(proj.images[0].badge) ? `<div class="absolute bottom-1.5 left-2 font-mono text-[9px] text-white bg-black/80 px-2 py-0.5 rounded border border-white/10 font-bold">${esc(v(proj.images[0].badge))}</div>` : ''}
+                  </div>
+                  <div class="relative rounded-lg overflow-hidden border border-[#25283c] bg-[#07080c]">
+                    <img src="${esc(v(proj.images[1].src))}" alt="${esc(v(proj.images[1].alt))}" class="w-full h-full object-cover">
+                    ${!isBlank(proj.images[1].badge) ? `<div class="absolute top-1.5 right-2 font-mono text-[9px] text-[#ef4940] bg-black/80 px-2 py-0.5 rounded border border-white/10 font-bold">${esc(v(proj.images[1].badge))}</div>` : ''}
+                  </div>
+                </div>`
+                : '';
+              const scrubberTopRow = renderHudRow(
+                [
+                  { check: vp.pairCount, align: 'left', html: `<span id="timecode-display">BATCH: 0048 // ${esc(v(vp.pairCount))}</span>` },
+                  { check: vp.statusLabel, align: 'center', html: `<span class="text-[#ef4940] font-bold">${esc(v(vp.statusLabel))}</span>` },
+                  { check: vp.accuracyValue, align: 'right', html: `<span class="text-[#c3f400] font-bold">ACC: ${esc(v(vp.accuracyValue))}</span>` },
+                ],
+                'font-mono text-[10px] text-[#cbd5e1] mb-1 font-medium'
+              );
+              viewportHtml = `<div class="lg:col-span-6 relative rounded-xl bg-[#06070c] border border-[#202336] overflow-hidden flex flex-col justify-between p-4 space-y-3 shadow-inner">
+                ${imgsBlock}
+                <div class="${hasImgs ? 'pt-2' : 'py-2'}">
+                  ${scrubberTopRow}
+                  <div class="relative w-full h-2.5 bg-[#181a28] rounded-full overflow-hidden cursor-pointer" id="scrubber-bar">
+                    <div class="absolute top-0 left-0 h-full bg-[#ef4940] rounded-full w-[45%]" id="scrubber-progress"></div>
+                  </div>
+                </div>
+              </div>`;
+            }
+
+            const galleryHtml =
+              vp.type !== 'scrubber' && Array.isArray(proj.images) && proj.images.length
+                ? `<div class="px-6 sm:px-8 lg:px-10 pb-6 sm:pb-8 pt-4 border-t border-[#222538]/80">
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                      ${proj.images
+                        .map(
+                          (img) => `<div class="relative h-32 sm:h-36 rounded-lg overflow-hidden border border-[#25283c] bg-[#06070c]">
+                            <img src="${esc(v(img.src))}" alt="${esc(v(img.alt))}" class="w-full h-full object-contain p-1">
+                            ${!isBlank(img.badge) ? `<div class="absolute bottom-1.5 left-2 font-mono text-[9px] text-white bg-black/80 px-2 py-0.5 rounded border border-white/10 font-bold">${esc(v(img.badge))}</div>` : ''}
+                          </div>`
+                        )
+                        .join('')}
+                    </div>
+                  </div>`
+                : '';
+
+            return `<div class="tilt-card project-card project-terminal group rounded-2xl bg-gradient-to-b from-[#121422] to-[#0a0b12] border border-[#25283c] overflow-hidden shadow-2xl transition-[border-color,box-shadow] duration-300 ${cardHover}">
+              <div class="flex items-center justify-between gap-2 px-4 sm:px-5 py-3.5 bg-[#151726] border-b border-[#24273c]">
+                <div class="flex items-center gap-2 shrink-0">
+                  <span class="w-3 h-3 rounded-full bg-[#ff5f56] inline-block shadow-sm"></span>
+                  <span class="w-3 h-3 rounded-full bg-[#ffbd2e] inline-block shadow-sm"></span>
+                  <span class="w-3 h-3 rounded-full bg-[#27c93f] inline-block shadow-sm"></span>
+                </div>
+                ${!isBlank(proj.filename) ? `<div class="font-mono text-xs text-white font-semibold truncate min-w-0 px-2">${esc(v(proj.filename))}</div>` : ''}
+                ${!isBlank(proj.statusLabel) ? `<div class="font-mono text-[11px] ${statusColor} font-bold whitespace-nowrap shrink-0">${esc(v(proj.statusLabel))}</div>` : ''}
+              </div>
+              <div class="p-6 sm:p-8 lg:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-6 space-y-4">
+                  <div class="flex flex-wrap items-center gap-2">${tagsHtml}</div>
+                  ${badgeHtml}
+                  <h3 class="font-sans text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">${esc(v(proj.title))}</h3>
+                  <p class="font-sans text-[#cbd5e1] text-sm sm:text-base leading-relaxed">${esc(v(proj.description))}</p>
+                  ${metricsBlock}
+                  ${linksHtml}
+                </div>
+                ${viewportHtml}
+              </div>
+              ${galleryHtml}
+            </div>`;
+          })
+          .join('');
+      }
+
+      const bentoEl = document.getElementById('work-bento-grid');
+      if (bentoEl) {
+        bentoEl.innerHTML = P.projects.bento
+          .map((proj) => {
+            const isLime = proj.accent === 'lime';
+            const hoverBorder = isLime ? 'hover:border-[#c3f400]/60' : 'hover:border-[#ef4940]/60';
+            const accentText = isLime ? 'text-[#c3f400]' : 'text-[#ef4940]';
+            const tagsHtml = proj.techTags
+              .filter((t) => !isBlank(t))
+              .map(
+                (t) =>
+                  `<span class="font-mono text-[10px] px-2.5 py-0.5 rounded-full bg-[#181a2e] border border-[#2c304c] text-[#f1f5f9] font-medium">${esc(v(t))}</span>`
+              )
+              .join('');
+            const githubUrl = proj.links && v(proj.links.github);
+            const demoUrl = proj.links && v(proj.links.demo);
+            const linksHtml =
+              !isBlank(githubUrl) || !isBlank(demoUrl)
+                ? `<div class="pb-3 flex items-center gap-4 text-[11px] font-mono">
+                    ${!isBlank(githubUrl) ? `<a href="${esc(githubUrl)}" target="_blank" rel="noopener noreferrer" class="text-[#cbd5e1] hover:text-[#c3f400] transition-colors">GITHUB ↗</a>` : ''}
+                    ${!isBlank(demoUrl) ? `<a href="${esc(demoUrl)}" target="_blank" rel="noopener noreferrer" class="text-[#cbd5e1] hover:text-[#ef4940] transition-colors">LIVE DEMO ↗</a>` : ''}
+                  </div>`
+                : '';
+            const bentoTopRow = renderHudRow(
+              [
+                { check: proj.category, align: 'left', html: `<span class="font-mono text-xs ${accentText} font-bold">${esc(v(proj.category))}</span>` },
+                { check: proj.stackHighlight, align: 'right', html: `<span class="font-mono text-xs text-[#94a3b8] font-medium">${esc(v(proj.stackHighlight))}</span>` },
+              ],
+              'mb-3'
+            );
+            const bentoFooterRow = renderHudRow(
+              [
+                { check: proj.footerLeft, align: 'left', html: `<span>${esc(v(proj.footerLeft))}</span>` },
+                { check: proj.footerRight, align: 'right', html: `<span>${esc(v(proj.footerRight))}</span>` },
+              ],
+              `pt-3 border-t border-[#232638] text-xs font-mono ${accentText} font-semibold`
+            );
+            return `<div class="tilt-card project-card p-6 sm:p-7 rounded-2xl bg-gradient-to-b from-[#141624] to-[#0c0d15] border border-[#25283c] ${hoverBorder} transition-[border-color,box-shadow] duration-300 flex flex-col justify-between shadow-2xl">
+              <div>
+                ${bentoTopRow}
+                <h4 class="font-sans text-xl font-bold text-white mb-2">${esc(v(proj.title))}</h4>
+                <p class="font-sans text-sm text-[#cbd5e1] leading-relaxed mb-4">${esc(v(proj.description))}</p>
+                <div class="flex flex-wrap gap-1.5 mb-4">${tagsHtml}</div>
+                ${linksHtml}
+              </div>
+              ${bentoFooterRow}
+            </div>`;
+          })
+          .join('');
+      }
+
+      // 7. Agri-SAGE Aperture Portal
+      setText('portal-badge', P.portal.badge);
+      setText('portal-heading-prefix', P.portal.headingPrefix);
+      setText('portal-heading-highlight', P.portal.headingHighlight);
+      setText('portal-description', P.portal.description);
+      const apertureImg = document.getElementById('aperture-image');
+      if (apertureImg) {
+        apertureImg.style.backgroundImage = `url('${v(P.portal.backgroundImage)}')`;
+      }
+      setText('portal-hud-top-left', P.portal.hudTopLeft);
+      setText('portal-hud-coords', P.portal.hudCoordinates);
+      setText('portal-hud-top-right', P.portal.hudTopRight);
+      setText('portal-hud-center-badge', P.portal.hudCenterBadge);
+      setText('portal-hud-center-title', P.portal.hudCenterTitle);
+      const portalRtt = document.getElementById('portal-hud-rtt');
+      if (portalRtt) {
+        if (isBlank(P.portal.hudRttValue)) {
+          portalRtt.remove();
+        } else {
+          portalRtt.textContent = 'RTT LATENCY: ' + v(P.portal.hudRttValue);
+        }
+      }
+      setText('portal-hud-bottom-center', P.portal.hudBottomCenter);
+      setText('portal-hud-bottom-right', P.portal.hudBottomRight);
+      const portalBottomBar = document.getElementById('portal-hud-bottom-bar');
+      if (portalBottomBar) {
+        if (portalBottomBar.children.length === 0) {
+          portalBottomBar.remove();
+        } else if (
+          portalBottomBar.children.length === 1 &&
+          portalBottomBar.firstElementChild.id === 'portal-hud-bottom-center'
+        ) {
+          portalBottomBar.classList.remove('justify-between');
+          portalBottomBar.classList.add('justify-center');
+        }
+      }
+
+      // 8. Tools & Stack
+      setText('stack-eyebrow', P.stack.eyebrow);
+      setText('stack-heading-prefix', P.stack.headingPrefix);
+      const stackGrid = document.getElementById('stack-grid');
+      if (stackGrid) {
+        stackGrid.innerHTML = P.stack.categories
+          .map((cat) => {
+            const isLime = cat.accent === 'lime';
+            const cardHover = isLime
+              ? 'hover:border-[#c3f400]/70 hover:shadow-[0_0_30px_rgba(195,244,0,0.12)]'
+              : 'hover:border-[#ef4940]/70 hover:shadow-[0_0_30px_rgba(239,73,64,0.12)]';
+            const headingColor = isLime ? 'text-[#c3f400]' : 'text-[#ef4940]';
+            const chipHover = isLime
+              ? 'hover:border-[#c3f400]/70 hover:text-[#c3f400]'
+              : 'hover:border-[#ef4940]/70 hover:text-[#ef4940]';
+            const chipsHtml = cat.items
+              .filter((item) => !isBlank(item))
+              .map(
+                (item) =>
+                  `<span class="px-2.5 py-1.5 rounded-lg bg-[#181a2e] border border-[#2c304c] text-center text-xs font-mono text-[#f1f5f9] font-medium ${chipHover} transition-colors">${esc(v(item))}</span>`
+              )
+              .join('');
+            return `<div class="tilt-card p-6 rounded-2xl bg-gradient-to-b from-[#141624] to-[#0c0d15] border border-[#25283c] ${cardHover} transition-[border-color,box-shadow] duration-300 space-y-4 shadow-2xl">
+              <div class="font-mono text-xs ${headingColor} font-bold tracking-wider">${esc(v(cat.title))}</div>
+              <div class="grid grid-cols-2 gap-2">${chipsHtml}</div>
+            </div>`;
+          })
+          .join('');
+      }
+
+      // 9. Milestones & Honors
+      setText('milestones-eyebrow', P.milestones.eyebrow);
+      setText('milestones-heading-prefix', P.milestones.headingPrefix);
+      const milestonesGrid = document.getElementById('milestones-grid');
+      if (milestonesGrid) {
+        milestonesGrid.innerHTML = P.milestones.items
+          .map((item, idx, arr) => {
+            const hoverCls =
+              item.accent === 'lime'
+                ? 'hover:border-[#c3f400]/70 hover:shadow-[0_0_30px_rgba(195,244,0,0.12)]'
+                : 'hover:border-[#ef4940]/70 hover:shadow-[0_0_30px_rgba(239,73,64,0.12)]';
+            const spanCls = arr.length % 2 === 1 && idx === arr.length - 1 ? 'md:col-span-2' : '';
+            const headerRow = renderHudRow(
+              [
+                { check: item.title, align: 'left', html: `<h3 class="font-sans text-lg font-bold text-white">${esc(v(item.title))}</h3>` },
+                {
+                  check: item.period,
+                  align: 'right',
+                  html: `<span class="font-mono text-xs text-[#c3f400] font-bold px-3 py-1 rounded-full bg-[#16182a] border border-[#2c304c] shadow-sm whitespace-nowrap shrink-0">${esc(v(item.period))}</span>`,
+                },
+              ],
+              'gap-2 mb-3'
+            );
+            const orgHtml = !isBlank(item.organization)
+              ? `<div class="font-mono text-xs text-[#ef4940] mb-3 font-bold drop-shadow-sm">${esc(v(item.organization))}</div>`
+              : '';
+            const descHtml = !isBlank(item.description)
+              ? `<p class="font-sans text-sm text-[#cbd5e1] leading-relaxed font-normal">${esc(v(item.description))}</p>`
+              : '';
+            return `<div class="tilt-card milestone-card ${spanCls} p-7 rounded-2xl bg-gradient-to-b from-[#141624] to-[#0c0d15] border border-[#25283c] ${hoverCls} shadow-2xl transition-[border-color,box-shadow] duration-300">
+              ${headerRow}
+              ${orgHtml}
+              ${descHtml}
+            </div>`;
+          })
+          .join('');
+      }
+
+      // 9.5 Experience & Internships
+      if (P.experience) {
+        setText('experience-eyebrow', P.experience.eyebrow);
+        setText('experience-heading-prefix', P.experience.headingPrefix);
+        const expGrid = document.getElementById('experience-grid');
+        if (expGrid) {
+          const visibleExpItems = (P.experience.items || []).filter(
+            (item) => !isBlank(item.role) && !isBlank(item.period)
+          );
+          expGrid.innerHTML = visibleExpItems
+            .map((item, idx, arr) => {
+              const isLime = item.accent === 'lime';
+              const hoverCls = isLime
+                ? 'hover:border-[#c3f400]/70 hover:shadow-[0_0_30px_rgba(195,244,0,0.12)]'
+                : 'hover:border-[#ef4940]/70 hover:shadow-[0_0_30px_rgba(239,73,64,0.12)]';
+              const spanCls = arr.length % 2 === 1 && idx === arr.length - 1 ? 'md:col-span-2' : '';
+              const bulletColor = isLime ? 'text-[#c3f400]' : 'text-[#ef4940]';
+              const bulletsHtml = (item.descriptions || [])
+                .filter((d) => !isBlank(d))
+                .map(
+                  (d) =>
+                    `<li class="flex items-start gap-2.5 text-sm text-[#cbd5e1] leading-relaxed font-normal"><span class="font-mono ${bulletColor} mt-0.5 shrink-0">&rsaquo;</span><span>${esc(v(d))}</span></li>`
+                )
+                .join('');
+              const metaRow = renderHudRow(
+                [
+                  { check: item.company, align: 'left', html: `<span class="text-[#ef4940] font-bold drop-shadow-sm">${esc(v(item.company))}</span>` },
+                  { check: item.mode, align: 'right', html: `<span class="text-[#94a3b8] font-medium">${esc(v(item.mode))}</span>` },
+                ],
+                'flex-wrap gap-2 font-mono text-xs mb-4'
+              );
+              return `<div class="tilt-card experience-card ${spanCls} p-7 rounded-2xl bg-gradient-to-b from-[#141624] to-[#0c0d15] border border-[#25283c] ${hoverCls} shadow-2xl transition-[border-color,box-shadow] duration-300">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                  <h3 class="font-sans text-lg sm:text-xl font-bold text-white">${esc(v(item.role))}</h3>
+                  <span class="font-mono text-xs text-[#c3f400] font-bold px-3 py-1 rounded-full bg-[#16182a] border border-[#2c304c] shadow-sm whitespace-nowrap shrink-0">${esc(v(item.period))}</span>
+                </div>
+                ${metaRow}
+                ${bulletsHtml ? `<ul class="space-y-2 font-sans">${bulletsHtml}</ul>` : ''}
+              </div>`;
+            })
+            .join('');
+        }
+      }
+
+      // 10. Contact / Hiring Gateway
+      const ctaBg = document.getElementById('cta-stage-bg');
+      if (ctaBg) {
+        ctaBg.style.backgroundImage = `url('${v(P.contact.backgroundImage)}')`;
+      }
+      setText('terminal-availability', P.identity.availabilityUpper);
+      setText('terminal-headline-prefix', P.contact.headlinePrefix);
+      setText('terminal-headline-highlight', P.contact.headlineHighlight);
+      setText('terminal-description', P.contact.availabilityDescription);
+      setText('email-address', P.contact.email);
+      setText('copy-label', P.contact.copyButtonLabel);
+      const terminalSocials = document.getElementById('terminal-socials');
+      if (terminalSocials) {
+        terminalSocials.innerHTML = P.socials
+          .map(
+            (s) =>
+              `<a href="${esc(v(s.href))}" target="_blank" rel="noopener noreferrer" class="magnetic-btn hover:text-[#c3f400] transition-colors flex items-center gap-1 text-[#cbd5e1] font-medium"><span>${esc(v(s.label))}</span> <span class="text-[10px]">↗</span></a>`
+          )
+          .join('<span class="text-[#35384a]">//</span>');
+      }
+
+      // 11. Footer
+      const footerBrand = document.getElementById('footer-brand');
+      if (footerBrand) {
+        footerBrand.innerHTML = esc(v(P.identity.nameUpper)) + '<span class="text-white">.</span>';
+      }
+      const footerLinks = document.getElementById('footer-links');
+      if (footerLinks) {
+        footerLinks.innerHTML = P.footer.links
+          .map(
+            (link) =>
+              `<a href="${esc(link.href)}" class="hover:text-[#c3f400] transition-colors font-medium">${esc(v(link.label))}</a>`
+          )
+          .join('');
+      }
+      setText('footer-copyright', P.footer.copyright);
+
+      // 12. Command Palette
+      const paletteSearchInput = document.getElementById('palette-search');
+      if (paletteSearchInput) {
+        paletteSearchInput.placeholder = v(P.commandPalette.placeholder);
+      }
+      const paletteItems = document.getElementById('palette-items');
+      if (paletteItems) {
+        const linkedinSocial = P.socials.find((s) => s.id === 'linkedin');
+        const navMarkup = P.commandPalette.navigationItems
+          .map(
+            (item) => `<a href="${esc(item.href)}" onclick="toggleCommandPalette()" class="flex items-center justify-between p-2.5 rounded-lg hover:bg-[#181b2e] text-[#cbd5e1] hover:text-white transition-colors">
+              <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full" style="background-color: ${esc(item.dotColor)}"></span>${esc(v(item.label))}</span>
+              <span class="text-[#94a3b8]">&rarr;</span>
+            </a>`
+          )
+          .join('');
+        paletteItems.innerHTML = `
+          <div class="text-[10px] text-[#94a3b8] px-3 py-1 uppercase tracking-wider font-bold">${esc(v(P.commandPalette.navigationLabel))}</div>
+          ${navMarkup}
+          <div class="text-[10px] text-[#94a3b8] px-3 pt-3 py-1 uppercase tracking-wider font-bold">${esc(v(P.commandPalette.quickActionsLabel))}</div>
+          <button onclick="copyEmail(); toggleCommandPalette();" class="w-full flex items-center justify-between p-2.5 rounded-lg hover:bg-[#181b2e] text-[#cbd5e1] hover:text-[#c3f400] transition-colors text-left">
+            <span>Copy Email Address (${esc(email)})</span>
+            <span class="text-[10px] px-1.5 py-0.5 rounded bg-[#1e2238] border border-[#2d324d] text-[#c3f400] font-bold">C</span>
+          </button>
+          ${
+            githubSocial
+              ? `<a href="${esc(v(githubSocial.href))}" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2.5 rounded-lg hover:bg-[#181b2e] text-[#cbd5e1] hover:text-white transition-colors">
+                  <span>Open GitHub Profile (${esc(v(githubSocial.handle))})</span>
+                  <span class="text-[10px] text-[#94a3b8]">↗</span>
+                </a>`
+              : ''
+          }
+          ${
+            linkedinSocial
+              ? `<a href="${esc(v(linkedinSocial.href))}" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2.5 rounded-lg hover:bg-[#181b2e] text-[#cbd5e1] hover:text-white transition-colors">
+                  <span>Open LinkedIn Profile</span>
+                  <span class="text-[10px] text-[#94a3b8]">↗</span>
+                </a>`
+              : ''
+          }
+        `;
+      }
+    })(window.PROFILE);
+
+    // Command Palette Logic
+    const cmdPalette = document.getElementById('cmd-palette');
+    const paletteSearch = document.getElementById('palette-search');
+    
+    function toggleCommandPalette() {
+      if (!cmdPalette) return;
+      if (cmdPalette.open) {
+        cmdPalette.close();
+        if (window.__lenis) window.__lenis.start();
+      } else {
+        if (window.__lenis) window.__lenis.stop();
+        cmdPalette.showModal();
+        if (paletteSearch) {
+          paletteSearch.value = '';
+          paletteSearch.focus();
+          filterPalette('');
+        }
+      }
+    }
+
+    if (cmdPalette) {
+      cmdPalette.addEventListener('close', () => {
+        if (window.__lenis) window.__lenis.start();
+      });
+    }
+
+    // Keyboard shortcut (Cmd+K / Ctrl+K / ESC)
+    window.addEventListener('keydown', (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        toggleCommandPalette();
+      }
+    });
+
+    // Close when clicking outside modal dialog
+    if (cmdPalette) {
+      cmdPalette.addEventListener('click', (e) => {
+        const dialogDimensions = cmdPalette.getBoundingClientRect();
+        if (
+          e.clientX < dialogDimensions.left ||
+          e.clientX > dialogDimensions.right ||
+          e.clientY < dialogDimensions.top ||
+          e.clientY > dialogDimensions.bottom
+        ) {
+          cmdPalette.close();
+        }
+      });
+    }
+
+    // Palette search filter
+    function filterPalette(term) {
+      const items = document.querySelectorAll('#palette-items a, #palette-items button');
+      items.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        if (!term || text.includes(term.toLowerCase())) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    if (paletteSearch) {
+      paletteSearch.addEventListener('input', (e) => {
+        filterPalette(e.target.value);
+      });
+    }
+
+    // Universal Cross-Browser Clipboard Helper with Fallback
+    function safeCopyToClipboard(text, onSuccess, onFallback) {
+      if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+        navigator.clipboard.writeText(text).then(onSuccess).catch(() => {
+          fallbackCopy();
+        });
+      } else {
+        fallbackCopy();
+      }
+
+      function fallbackCopy() {
+        try {
+          const ta = document.createElement('textarea');
+          ta.value = text;
+          ta.style.position = 'fixed';
+          ta.style.top = '-9999px';
+          ta.style.left = '-9999px';
+          ta.style.opacity = '0';
+          document.body.appendChild(ta);
+          ta.focus();
+          ta.select();
+          const successful = document.execCommand('copy');
+          document.body.removeChild(ta);
+          if (successful) {
+            onSuccess();
+          } else if (onFallback) {
+            onFallback();
+          }
+        } catch (e) {
+          if (onFallback) onFallback();
+        }
+      }
+    }
+
+    // 1. Copy Email action (Cross-Browser Safe)
+    function copyEmail() {
+      const P = window.PROFILE;
+      const email = P ? profileVal(P.contact.email) : '';
+      const copiedLabel = P ? profileVal(P.contact.copiedButtonLabel) : 'COPIED!';
+      const copyLabel = P ? profileVal(P.contact.copyButtonLabel) : 'COPY';
+      if (!email) return;
+      safeCopyToClipboard(email, () => {
+        const btnLabel = document.getElementById('copy-label');
+        if (btnLabel) {
+          btnLabel.innerText = copiedLabel;
+          setTimeout(() => {
+            btnLabel.innerText = copyLabel;
+          }, 2200);
+        }
+      });
+    }
+
+    // 1.5 Copy Color Token Hex action (Cross-Browser Safe)
+    function copyHex(hex, name) {
+      safeCopyToClipboard(hex, () => {
+        const feedback = document.getElementById('swatch-feedback');
+        if (feedback) {
+          const original = feedback.innerHTML;
+          feedback.innerHTML = `<span class="text-[#c3f400] font-bold">COPIED ${hex} (${name.toUpperCase()})!</span><span class="text-white font-bold">&check; CLIPBOARD READY</span>`;
+          setTimeout(() => {
+            feedback.innerHTML = original;
+          }, 2200);
+        }
+      }, () => {
+        const feedback = document.getElementById('swatch-feedback');
+        if (feedback) {
+          feedback.innerHTML = `<span class="text-white">${hex}</span><span>SELECTED</span>`;
+        }
+      });
+    }
+
+    // Shared clamped delta-time helper immune to cold-start RAF vs performance.now skew
+    function computeFrameDt(currentTime, lastTime) {
+      if (lastTime === null) return 0.016;
+      return Math.min(0.1, Math.max(0.001, (currentTime - lastTime) / 1000));
+    }
+
+    // 2. Kinetic Runtime Radar / Geometry Canvas Animation (High-DPI & 120 FPS Delta-Time)
+    (function initKineticCanvas() {
+      const canvas = document.getElementById('kinetic-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+
+      const logicalW = 280;
+      const logicalH = 150;
+      const dpr = Math.min(window.devicePixelRatio || 1, 2.5);
+      canvas.width = logicalW * dpr;
+      canvas.height = logicalH * dpr;
+      canvas.style.width = logicalW + 'px';
+      canvas.style.height = logicalH + 'px';
+      ctx.scale(dpr, dpr);
+
+      let angle = 0;
+      let lastTime = performance.now();
+      let isInView = true;
+      let rafId = null;
+
+      function drawFrame() {
+        ctx.clearRect(0, 0, logicalW, logicalH);
+        const cx = logicalW / 2;
+        const cy = logicalH / 2;
+
+        // Concentric Dashed Radar Circles
+        [30, 52, 68].forEach((r, idx) => {
+          ctx.beginPath();
+          ctx.arc(cx, cy, r, 0, Math.PI * 2);
+          ctx.strokeStyle = idx === 1 ? 'rgba(239, 73, 64, 0.4)' : 'rgba(195, 244, 0, 0.25)';
+          ctx.lineWidth = 1;
+          ctx.setLineDash([4, 4]);
+          ctx.stroke();
+        });
+
+        // Center crosshair
+        ctx.setLineDash([]);
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.15)';
+        ctx.beginPath();
+        ctx.moveTo(cx - 15, cy);
+        ctx.lineTo(cx + 15, cy);
+        ctx.moveTo(cx, cy - 15);
+        ctx.lineTo(cx, cy + 15);
+        ctx.stroke();
+
+        // Orbiting Node 1 (Lime)
+        const ox1 = cx + Math.cos(angle) * 52;
+        const oy1 = cy + Math.sin(angle) * 52;
+        ctx.beginPath();
+        ctx.arc(ox1, oy1, 3.5, 0, Math.PI * 2);
+        ctx.fillStyle = '#c3f400';
+        ctx.shadowColor = '#c3f400';
+        ctx.shadowBlur = 8;
+        ctx.fill();
+        ctx.shadowBlur = 0;
+
+        // Orbiting Node 2 (Red)
+        const ox2 = cx + Math.cos(-angle * 1.4) * 68;
+        const oy2 = cy + Math.sin(-angle * 1.4) * 68;
+        ctx.beginPath();
+        ctx.arc(ox2, oy2, 2.5, 0, Math.PI * 2);
+        ctx.fillStyle = '#ef4940';
+        ctx.shadowColor = '#ef4940';
+        ctx.shadowBlur = 6;
+        ctx.fill();
+        ctx.shadowBlur = 0;
+      }
+
+      function render(currentTime) {
+        if (!isInView || document.hidden) {
+          rafId = null;
+          return;
+        }
+        const dt = computeFrameDt(currentTime, lastTime);
+        lastTime = currentTime;
+        angle += 1.5 * dt;
+        drawFrame();
+        rafId = requestAnimationFrame(render);
+      }
+
+      function startLoop() {
+        if (rafId !== null || !isInView || document.hidden) return;
+        lastTime = null;
+        rafId = requestAnimationFrame(render);
+      }
+
+      drawFrame();
+      if (typeof IntersectionObserver !== 'undefined') {
+        const obs = new IntersectionObserver((entries) => {
+          isInView = entries[0].isIntersecting;
+          if (isInView) startLoop();
+        }, { rootMargin: '300px' });
+        obs.observe(canvas);
+      }
+      document.addEventListener('visibilitychange', () => {
+        if (!document.hidden && isInView) startLoop();
+      });
+      startLoop();
+    })();
+
+    // 3. MIRLO Desktop Dynamic Audio Equalizer Spectrum (High-DPI & 120 FPS Delta-Time)
+    (function initVoiceWaveform() {
+      const canvas = document.getElementById('voice-waveform-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+
+      function setupDpr() {
+        const rect = canvas.getBoundingClientRect();
+        const logicalW = rect.width > 0 ? rect.width : 400;
+        const logicalH = rect.height > 0 ? rect.height : 130;
+        const dpr = Math.min(window.devicePixelRatio || 1, 2.5);
+        canvas.width = logicalW * dpr;
+        canvas.height = logicalH * dpr;
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+        ctx.scale(dpr, dpr);
+        return { logicalW, logicalH };
+      }
+
+      let dims = setupDpr();
+      window.addEventListener('resize', () => {
+        dims = setupDpr();
+        drawFrame();
+      }, { passive: true });
+
+      const numBars = 36;
+      let phase = 0;
+      let lastTime = performance.now();
+      let isInView = true;
+      let rafId = null;
+
+      function drawFrame() {
+        const w = dims.logicalW;
+        const h = dims.logicalH;
+        ctx.clearRect(0, 0, w, h);
+
+        const barWidth = Math.max(2.5, (w / numBars) * 0.45);
+        const gap = (w - (numBars * barWidth)) / (numBars - 1);
+        const cy = h / 2;
+
+        for (let i = 0; i < numBars; i++) {
+          const x = i * (barWidth + gap);
+          const distFromCenter = Math.abs(i - numBars / 2) / (numBars / 2);
+          const weight = Math.cos(distFromCenter * Math.PI * 0.45);
+          const wave1 = Math.sin(phase + i * 0.45);
+          const wave2 = Math.cos(phase * 1.5 - i * 0.3);
+          const barHeight = Math.max(8, (wave1 * 0.5 + wave2 * 0.5 + 1.2) * (h * 0.32) * weight);
+
+          let color = '#ef4940';
+          if (distFromCenter < 0.3) {
+            color = '#c3f400';
+          } else if (distFromCenter < 0.6) {
+            color = '#ff9800';
+          }
+
+          ctx.fillStyle = color;
+          ctx.beginPath();
+          if (typeof ctx.roundRect === 'function') {
+            ctx.roundRect(x, cy - barHeight / 2, barWidth, barHeight, 2);
+          } else {
+            ctx.rect(x, cy - barHeight / 2, barWidth, barHeight);
+          }
+          ctx.fill();
+        }
+      }
+
+      function render(currentTime) {
+        if (!isInView || document.hidden) {
+          rafId = null;
+          return;
+        }
+        const dt = computeFrameDt(currentTime, lastTime);
+        lastTime = currentTime;
+        phase += 4.2 * dt;
+        drawFrame();
+        rafId = requestAnimationFrame(render);
+      }
+
+      function startLoop() {
+        if (rafId !== null || !isInView || document.hidden) return;
+        lastTime = null;
+        rafId = requestAnimationFrame(render);
+      }
+
+      drawFrame();
+      if (typeof IntersectionObserver !== 'undefined') {
+        const obs = new IntersectionObserver((entries) => {
+          isInView = entries[0].isIntersecting;
+          if (isInView) startLoop();
+        }, { rootMargin: '300px' });
+        obs.observe(canvas);
+      }
+      document.addEventListener('visibilitychange', () => {
+        if (!document.hidden && isInView) startLoop();
+      });
+      startLoop();
+    })();
+
+    // 4. Entity Resolution Batch Scrubber Progress (Smooth 120 FPS Gliding Progress)
+    (function initScrubber() {
+      const bar = document.getElementById('scrubber-bar');
+      const progress = document.getElementById('scrubber-progress');
+      const tcDisplay = document.getElementById('timecode-display');
+      if (!bar || !progress) return;
+      const pairCountText =
+        window.PROFILE && window.PROFILE.projects.featured[2]
+          ? profileVal(window.PROFILE.projects.featured[2].viewport.pairCount)
+          : '';
+
+      let pct = 45;
+      let lastBatch = -1;
+      let lastTime = performance.now();
+      let rafId = null;
+
+      function applyProgress() {
+        progress.style.width = pct.toFixed(2) + '%';
+        const batch = Math.floor((pct / 100) * 120) + 1;
+        if (tcDisplay && !isBlank(pairCountText) && batch !== lastBatch) {
+          lastBatch = batch;
+          tcDisplay.textContent = `BATCH: ${String(batch).padStart(4, '0')} // ${pairCountText}`;
+        }
+      }
+
+      function step(currentTime) {
+        if (document.hidden) {
+          rafId = null;
+          return;
+        }
+        const dt = computeFrameDt(currentTime, lastTime);
+        lastTime = currentTime;
+
+        pct = (pct + 2.4 * dt) % 100;
+        applyProgress();
+        rafId = requestAnimationFrame(step);
+      }
+
+      function startLoop() {
+        if (rafId !== null || document.hidden) return;
+        lastTime = null;
+        rafId = requestAnimationFrame(step);
+      }
+
+      applyProgress();
+      document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) startLoop();
+      });
+      startLoop();
+
+      // Interactive click to seek
+      bar.addEventListener('click', (e) => {
+        const rect = bar.getBoundingClientRect();
+        pct = Math.max(0, Math.min(100, ((e.clientX - rect.left) / rect.width) * 100));
+        applyProgress();
+      });
+    })();
+
+    // ========================================================
+    // 5. HIGH-PRECISION DAMPED CURSOR FOLLOWER (120 FPS DECOUPLED)
+    // ========================================================
+    (function initCursor() {
+      const dot = document.getElementById('cursor-dot');
+      const ring = document.getElementById('cursor-ring');
+      if (!dot || !ring) return;
+
+      // Only suppress custom cursor on touch-only small screens (< 768px)
+      if (window.matchMedia('(pointer: coarse) and (max-width: 768px)').matches) {
+        dot.style.display = 'none';
+        ring.style.display = 'none';
+        return;
+      }
+
+      let mouseX = window.innerWidth / 2;
+      let mouseY = window.innerHeight / 2;
+      let ringX = mouseX;
+      let ringY = mouseY;
+      let isVisible = false;
+      let rafId = null;
+      let lastTime = performance.now();
+
+      function applyCursorPositions() {
+        dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+        ring.style.transform = `translate3d(${ringX.toFixed(2)}px, ${ringY.toFixed(2)}px, 0) translate(-50%, -50%)`;
+      }
+
+      function startLoop() {
+        if (rafId !== null || document.hidden) return;
+        lastTime = null;
+        rafId = requestAnimationFrame(tick);
+      }
+
+      window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+
+        if (!isVisible) {
+          isVisible = true;
+          ringX = mouseX;
+          ringY = mouseY;
+          dot.style.opacity = '1';
+          ring.style.opacity = '1';
+        }
+        startLoop();
+      }, { passive: true });
+
+      document.addEventListener('mouseleave', () => {
+        isVisible = false;
+        dot.style.opacity = '0';
+        ring.style.opacity = '0';
+      });
+
+      function tick(currentTime) {
+        if (document.hidden) {
+          rafId = null;
+          return;
+        }
+        const dt = computeFrameDt(currentTime, lastTime);
+        lastTime = currentTime;
+
+        const lerpFactor = 1 - Math.exp(-15 * dt);
+        ringX += (mouseX - ringX) * lerpFactor;
+        ringY += (mouseY - ringY) * lerpFactor;
+        applyCursorPositions();
+
+        const remaining = Math.abs(mouseX - ringX) + Math.abs(mouseY - ringY);
+        if (!isVisible && remaining < 0.05) {
+          rafId = null;
+          return;
+        }
+        if (remaining < 0.05) {
+          ringX = mouseX;
+          ringY = mouseY;
+          applyCursorPositions();
+          rafId = null;
+          return;
+        }
+        rafId = requestAnimationFrame(tick);
+      }
+
+      applyCursorPositions();
+
+      // Expand ring when hovering interactive elements
+      const targets = document.querySelectorAll('a, button, input, .tilt-card, [role="button"]');
+      targets.forEach(el => {
+        el.addEventListener('mouseenter', () => document.body.classList.add('cursor-active'));
+        el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-active'));
+      });
+    })();
+
+    // ========================================================
+    // 6. 3D PERSPECTIVE CARD TILT PHYSICS (120 FPS RAF DAMPING)
+    // ========================================================
+    (function initTiltCards() {
+      const cards = document.querySelectorAll('.tilt-card');
+      if (!cards.length) return;
+
+      const cardStates = new Map();
+      const activeStates = new Set();
+      let rafId = null;
+      let lastTime = performance.now();
+
+      function startTiltLoop() {
+        if (rafId !== null || document.hidden || activeStates.size === 0) return;
+        lastTime = null;
+        rafId = requestAnimationFrame(tiltTick);
+      }
+
+      cards.forEach(card => {
+        const state = {
+          card,
+          rect: null,
+          targetX: 0,
+          targetY: 0,
+          currentX: 0,
+          currentY: 0,
+          isHovered: false
+        };
+        cardStates.set(card, state);
+
+        function updateRect() {
+          state.rect = card.getBoundingClientRect();
+        }
+
+        card.addEventListener('mouseenter', () => {
+          updateRect();
+          state.isHovered = true;
+          activeStates.add(state);
+          startTiltLoop();
+        });
+
+        card.addEventListener('mousemove', (e) => {
+          if (!state.rect) updateRect();
+          const x = e.clientX - state.rect.left;
+          const y = e.clientY - state.rect.top;
+          const centerX = state.rect.width / 2;
+          const centerY = state.rect.height / 2;
+
+          state.targetX = -((y - centerY) / (centerY || 1)) * 4.5;
+          state.targetY = ((x - centerX) / (centerX || 1)) * 4.5;
+          activeStates.add(state);
+          startTiltLoop();
+        });
+
+        card.addEventListener('mouseleave', () => {
+          state.isHovered = false;
+          state.targetX = 0;
+          state.targetY = 0;
+          activeStates.add(state);
+          startTiltLoop();
+        });
+      });
+
+      function tiltTick(currentTime) {
+        if (document.hidden || activeStates.size === 0) {
+          rafId = null;
+          return;
+        }
+        const dt = computeFrameDt(currentTime, lastTime);
+        lastTime = currentTime;
+        const lerpFactor = 1 - Math.exp(-14 * dt);
+
+        activeStates.forEach(state => {
+          const diffX = state.targetX - state.currentX;
+          const diffY = state.targetY - state.currentY;
+
+          if (Math.abs(diffX) > 0.005 || Math.abs(diffY) > 0.005) {
+            state.currentX += diffX * lerpFactor;
+            state.currentY += diffY * lerpFactor;
+            const z = state.isHovered ? 4 : 0;
+            state.card.style.transform = `perspective(1000px) rotateX(${state.currentX.toFixed(2)}deg) rotateY(${state.currentY.toFixed(2)}deg) translateZ(${z}px)`;
+          } else if (!state.isHovered) {
+            state.currentX = 0;
+            state.currentY = 0;
+            state.card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px)';
+            activeStates.delete(state);
+          } else {
+            state.currentX = state.targetX;
+            state.currentY = state.targetY;
+            state.card.style.transform = `perspective(1000px) rotateX(${state.currentX.toFixed(2)}deg) rotateY(${state.currentY.toFixed(2)}deg) translateZ(4px)`;
+            activeStates.delete(state);
+          }
+        });
+
+        if (activeStates.size > 0) {
+          rafId = requestAnimationFrame(tiltTick);
+        } else {
+          rafId = null;
+        }
+      }
+
+      const refreshHoveredRects = () => {
+        cardStates.forEach(state => {
+          if (state.isHovered) state.rect = state.card.getBoundingClientRect();
+        });
+      };
+      window.addEventListener('resize', refreshHoveredRects, { passive: true });
+      window.addEventListener('scroll', refreshHoveredRects, { passive: true });
+    })();
+
+    // ========================================================
+    // 6.5 INTERACTIVE CINEMATIC LENS MASK CONTROLLER
+    // ========================================================
+    function setAspectMask(type) {
+      const viewport = document.getElementById('film-viewport');
+      if (!viewport) return;
+      document.querySelectorAll('.aspect-btn').forEach(b => {
+        if (b.dataset.aspect === type) {
+          b.classList.add('bg-[#181a2c]', 'text-white', 'border-[#2b304c]');
+          b.classList.remove('text-[#cbd5e1]', 'border-[#222538]');
+        } else {
+          b.classList.remove('bg-[#181a2c]', 'text-white', 'border-[#2b304c]');
+          b.classList.add('text-[#cbd5e1]', 'border-[#222538]');
+        }
+      });
+      const val = type === 'cinema' ? 'inset(14% 0% 14% 0% round 10px)' :
+                  type === 'imax' ? 'inset(0% 12% 0% 12% round 10px)' :
+                  type === 'stadium' ? 'inset(8% 6% 8% 6% round 42px)' :
+                  'inset(0% 0% 0% 0% round 10px)';
+      viewport.style.webkitClipPath = val;
+      viewport.style.clipPath = val;
+    }
+
+    // ========================================================
+    // 6.6 MAGNETIC BUTTON PHYSICS (DELTA-TIME LERP DAMPING)
+    // ========================================================
+    function initMagneticButtons() {
+      const buttons = document.querySelectorAll('.magnetic-btn');
+      buttons.forEach((btn) => {
+        let rect = null;
+        btn.addEventListener('mouseenter', () => {
+          rect = btn.getBoundingClientRect();
+        });
+        btn.addEventListener('mousemove', (e) => {
+          if (!rect) rect = btn.getBoundingClientRect();
+          const x = (e.clientX - (rect.left + rect.width / 2)) * 0.35;
+          const y = (e.clientY - (rect.top + rect.height / 2)) * 0.35;
+          if (typeof gsap !== 'undefined') {
+            gsap.to(btn, { x, y, duration: 0.25, ease: 'power2.out', overwrite: 'auto' });
+          }
+        });
+        btn.addEventListener('mouseleave', () => {
+          rect = null;
+          if (typeof gsap !== 'undefined') {
+            gsap.to(btn, { x: 0, y: 0, duration: 0.65, ease: 'elastic.out(1, 0.4)', overwrite: 'auto' });
+          }
+        });
+      });
+    }
+
+    // ========================================================
+    // 7. MASTER SCROLL ENGINE (LENIS) & GSAP SCROLLTRIGGER
+    // ========================================================
+    let lenisInstance = null;
+    let heroEntranceTl = null;
+    const siteHeader = document.querySelector('header');
+    const navAnchors = Array.from(document.querySelectorAll('header nav a[href^="#"]'));
+
+    function setActiveNavSection(id) {
+      navAnchors.forEach((a) => {
+        a.classList.toggle('is-nav-active', Boolean(id && a.getAttribute('href') === `#${id}`));
+      });
+    }
+
+    function updateHeaderScrollState(scrollY) {
+      if (siteHeader) {
+        siteHeader.classList.toggle('is-scrolled', scrollY > 24);
+      }
+    }
+
+    function initMasterMotion() {
+      // 1. Initialize Lenis Smooth Scroll with Physical LERP (0.09)
+      if (typeof Lenis !== 'undefined') {
+        lenisInstance = new Lenis({
+          lerp: 0.09,
+          orientation: 'vertical',
+          gestureOrientation: 'vertical',
+          smoothWheel: true,
+          wheelMultiplier: 1.0,
+          touchMultiplier: 1.5,
+          syncTouch: false,
+        });
+
+        window.__lenis = lenisInstance;
+        document.documentElement.classList.add('lenis', 'lenis-smooth');
+
+        if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+          gsap.registerPlugin(ScrollTrigger);
+
+          // Synchronize Lenis coordinates directly with ScrollTrigger & header
+          lenisInstance.on('scroll', (e) => {
+            ScrollTrigger.update();
+            updateHeaderScrollState(e.scroll);
+          });
+
+          // Drive Lenis tick through GSAP ticker for single-RAF frame lock
+          gsap.ticker.add((time) => {
+            lenisInstance.raf(time * 1000);
+          });
+          gsap.ticker.lagSmoothing(0);
+        } else {
+          function raf(time) {
+            lenisInstance.raf(time);
+            requestAnimationFrame(raf);
+          }
+          requestAnimationFrame(raf);
+        }
+
+        // Smooth Anchor Links with Fixed Header Offset
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener('click', (e) => {
+            const targetId = anchor.getAttribute('href');
+            if (cmdPalette && cmdPalette.open) {
+              cmdPalette.close();
+            }
+            lenisInstance.start();
+
+            if (targetId === '#') {
+              e.preventDefault();
+              lenisInstance.scrollTo(0, { duration: 1.0 });
+            } else if (targetId) {
+              const targetEl = document.querySelector(targetId);
+              if (targetEl) {
+                e.preventDefault();
+                lenisInstance.scrollTo(targetEl, { offset: -64, duration: 1.0 });
+              }
+            }
+          });
+        });
+      }
+
+      updateHeaderScrollState(window.scrollY || 0);
+
+      // 2. Interactive Physics & Magnetic Attraction
+      initMagneticButtons();
+
+      // 3. Hero Load Entrance
+      initHeroEntrance();
+
+      // 4. Synchronized ScrollTrigger Choreography
+      if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        initScrollTriggers();
+      }
+    }
+
+    // Master Hero Page Load Entrance Animation
+    function initHeroEntrance() {
+      if (typeof gsap === 'undefined') return;
+
+      const loadTl = gsap.timeline({
+        defaults: { ease: 'power3.out', clearProps: 'opacity,transform' }
+      });
+
+      loadTl
+        .from('#hero-bg-text', {
+          scale: 0.95,
+          opacity: 0.45,
+          duration: 0.85,
+          ease: 'power2.out',
+        })
+        .from('#hero-portrait', {
+          y: 22,
+          scale: 0.97,
+          opacity: 0,
+          duration: 0.75,
+        }, '-=0.6')
+        .from('#hero-title-group', {
+          y: 18,
+          opacity: 0,
+          duration: 0.65,
+        }, '-=0.5')
+        .from('#figma-bounds', {
+          y: 14,
+          opacity: 0,
+          duration: 0.6,
+        }, '-=0.45')
+        .from('.hero-telemetry', {
+          y: 12,
+          opacity: 0,
+          duration: 0.55,
+          stagger: 0.05,
+        }, '-=0.4');
+
+      heroEntranceTl = loadTl;
+      if ((window.scrollY || 0) > 40) {
+        heroEntranceTl.progress(1);
+      }
+    }
+
+    // Shared grid stagger helper: cascades per visual row on desktop/tablet and cleanly on mobile
+    function revealGridCards(cards, { colsDesktop = 2, colsTablet = 2, y = 26, scale = 0.985, duration = 0.65 } = {}) {
+      const list = gsap.utils.toArray(cards);
+      const getCols = () => (window.innerWidth >= 1024 ? colsDesktop : (window.innerWidth >= 768 ? colsTablet : 1));
+
+      list.forEach((card, idx) => {
+        gsap.from(card, {
+          scrollTrigger: {
+            trigger: card,
+            start: 'top 90%',
+            toggleActions: 'play none none none',
+            once: true,
+          },
+          opacity: 0,
+          y,
+          scale,
+          duration,
+          delay: () => {
+            const cols = getCols();
+            return cols > 1 ? (idx % cols) * 0.07 : 0;
+          },
+          ease: 'power3.out',
+          clearProps: 'opacity,transform',
+        });
+      });
+    }
+
+    function initScrollTriggers() {
+      const mm = gsap.matchMedia();
+
+      // ========================================================
+      // A. HERO MULTI-PLANE OPTICAL DEPTH SCRUBBING
+      // ========================================================
+      gsap.to('#hero-portrait img', {
+        y: -8,
+        duration: 3.5,
+        yoyo: true,
+        repeat: -1,
+        ease: 'sine.inOut',
+      });
+
+      gsap.to('#hero-glow-pulse', {
+        scale: 1.15,
+        opacity: 0.7,
+        duration: 4.5,
+        yoyo: true,
+        repeat: -1,
+        ease: 'sine.inOut',
+      });
+
+      const heroTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: '#hero',
+          start: 'top top',
+          end: 'bottom top',
+          scrub: 0.25,
+          invalidateOnRefresh: true,
+          onUpdate: (self) => {
+            if (self.progress > 0.01 && heroEntranceTl && heroEntranceTl.isActive()) {
+              heroEntranceTl.progress(1);
+            }
+          }
+        }
+      });
+
+      // Explicit rest baselines prevent refresh() from ever baking mid-entrance state
+      heroTl
+        .fromTo('#hero-bg-text',
+          { yPercent: 0, scale: 1, opacity: 1 },
+          { yPercent: 22, scale: 1.04, opacity: 0.82, ease: 'none', immediateRender: false },
+          0
+        )
+        .fromTo('#hero-glow',
+          { scale: 1, opacity: 1 },
+          { scale: 1.3, opacity: 0.35, ease: 'none', immediateRender: false },
+          0
+        )
+        .fromTo('#hero-portrait',
+          { y: 0, scale: 1 },
+          { y: -48, scale: 0.97, ease: 'none', immediateRender: false },
+          0
+        )
+        .fromTo('#hero-title-group',
+          { y: 0, opacity: 1 },
+          { y: -28, opacity: 0.96, ease: 'none', immediateRender: false },
+          0
+        )
+        .fromTo('#figma-bounds',
+          { y: 0 },
+          { y: -16, ease: 'none', immediateRender: false },
+          0
+        )
+        .fromTo('.hero-telemetry',
+          { y: 0, opacity: 1 },
+          { y: -14, opacity: 0.92, ease: 'none', immediateRender: false },
+          0
+        );
+
+      // ========================================================
+      // B. EDITORIAL SECTION HEADERS
+      // ========================================================
+      gsap.utils.toArray('.section-header').forEach((header) => {
+        gsap.from(header.children, {
+          scrollTrigger: {
+            trigger: header,
+            start: 'top 90%',
+            toggleActions: 'play none none none',
+            once: true,
+          },
+          opacity: 0,
+          y: 26,
+          duration: 0.65,
+          stagger: 0.06,
+          ease: 'power3.out',
+          clearProps: 'opacity,transform',
+        });
+      });
+
+      // Wavy underline draw on Approach section entrance
+      ScrollTrigger.create({
+        trigger: '#philosophy',
+        start: 'top 85%',
+        once: true,
+        onEnter: () => {
+          const wavy = document.querySelector('.wavy-svg-line');
+          if (wavy) wavy.classList.add('is-drawn');
+        }
+      });
+
+      // ========================================================
+      // C. APPROACH BENTO CARDS ENTRANCE & PARALLAX
+      // ========================================================
+      const bentoCards = gsap.utils.toArray('#philosophy .bento-card');
+      if (bentoCards.length > 0) {
+        revealGridCards(bentoCards, { colsDesktop: 3, colsTablet: 3, y: 28, scale: 0.98, duration: 0.65 });
+
+        // Decoupled via CSS `translate` so 3D `.tilt-card` hover `transform` never collides
+        if (bentoCards.length === 3) {
+          mm.add('(min-width: 768px)', () => {
+            const lift = { yp: 0 };
+            const applyLift = () => {
+              bentoCards[1].style.translate = `0 ${lift.yp.toFixed(2)}%`;
+            };
+            gsap.fromTo(lift,
+              { yp: 0 },
+              {
+                yp: -6,
+                ease: 'none',
+                immediateRender: false,
+                onUpdate: applyLift,
+                scrollTrigger: {
+                  trigger: '#philosophy',
+                  start: 'top 55%',
+                  end: 'bottom top',
+                  scrub: 0.25,
+                  invalidateOnRefresh: true,
+                }
+              }
+            );
+            return () => {
+              bentoCards[1].style.translate = '';
+            };
+          });
+        }
+      }
+
+      // ========================================================
+      // D. GRAPHIC DESIGN LAB (MONOGRAM ARCHITECTURE & SWATCHES)
+      // ========================================================
+      revealGridCards('#design > .max-w-7xl > .grid > div', { colsDesktop: 2, colsTablet: 2, y: 28, scale: 0.985, duration: 0.65 });
+
+      ScrollTrigger.create({
+        trigger: '#design',
+        start: 'top 82%',
+        once: true,
+        onEnter: () => {
+          gsap.from('#monogram-svg line, #monogram-svg circle:not([r="32"]):not([fill])', {
+            opacity: 0,
+            scale: 0.92,
+            duration: 0.65,
+            stagger: 0.03,
+            ease: 'power2.out',
+            transformOrigin: 'center center'
+          });
+
+          const pathM = document.getElementById('monogram-letter-m');
+          if (pathM) {
+            gsap.fromTo(pathM,
+              { strokeDasharray: 350, strokeDashoffset: 350 },
+              { strokeDashoffset: 0, duration: 0.95, ease: 'power2.out', delay: 0.15 }
+            );
+          }
+
+          const circleO = document.getElementById('monogram-letter-o');
+          if (circleO) {
+            gsap.fromTo(circleO,
+              { strokeDasharray: 205, strokeDashoffset: 205 },
+              { strokeDashoffset: 0, duration: 0.85, ease: 'power2.out', delay: 0.25 }
+            );
+          }
+
+          const period = document.getElementById('monogram-period');
+          if (period) {
+            gsap.from(period, {
+              scale: 0,
+              opacity: 0,
+              duration: 0.35,
+              ease: 'back.out(2)',
+              delay: 0.55,
+              transformOrigin: 'center center'
+            });
+          }
+
+          gsap.from('#monogram-svg text', {
+            opacity: 0,
+            y: 6,
+            duration: 0.45,
+            stagger: 0.04,
+            ease: 'power2.out',
+            delay: 0.45
+          });
+        }
+      });
+
+      gsap.from('#design .space-y-2\\.5 > button', {
+        scrollTrigger: {
+          trigger: '#design .space-y-2\\.5',
+          start: 'top 90%',
+          toggleActions: 'play none none none',
+          once: true,
+        },
+        opacity: 0,
+        y: 12,
+        duration: 0.45,
+        stagger: 0.04,
+        ease: 'power2.out',
+        clearProps: 'opacity,transform',
+      });
+
+      // ========================================================
+      // E. EDUCATION CARD & COURSEWORK PILLS (UNIFIED NO-FLASH TIMING)
+      // ========================================================
+      gsap.from('.academics-card', {
+        scrollTrigger: {
+          trigger: '#academics',
+          start: 'top 90%',
+          toggleActions: 'play none none none',
+          once: true,
+        },
+        opacity: 0,
+        y: 26,
+        scale: 0.985,
+        duration: 0.65,
+        ease: 'power3.out',
+        clearProps: 'opacity,transform',
+      });
+
+      gsap.from('#academics .flex.flex-wrap.gap-2 > span', {
+        scrollTrigger: {
+          trigger: '#academics',
+          start: 'top 90%',
+          toggleActions: 'play none none none',
+          once: true,
+        },
+        opacity: 0,
+        y: 8,
+        duration: 0.42,
+        delay: 0.1,
+        stagger: 0.025,
+        ease: 'power2.out',
+        clearProps: 'opacity,transform',
+      });
+
+      // ========================================================
+      // F. SELECTED PROJECTS TERMINALS & TACTILE CARD STACKING
+      // ========================================================
+      const terminals = gsap.utils.toArray('.project-terminal');
+      terminals.forEach((term) => {
+        gsap.from(term, {
+          scrollTrigger: {
+            trigger: term,
+            start: 'top 90%',
+            toggleActions: 'play none none none',
+            once: true,
+          },
+          opacity: 0,
+          y: 30,
+          duration: 0.65,
+          ease: 'power3.out',
+          clearProps: 'opacity,transform',
+        });
+      });
+
+      // Card stacking decoupled via CSS `scale` & `translate` so `.tilt-card` hover composes cleanly
+      mm.add('(min-width: 768px)', () => {
+        terminals.forEach((term, idx) => {
+          if (idx >= terminals.length - 1) return;
+          const stack = { s: 1, y: 0, op: 1 };
+          const applyStack = () => {
+            term.style.scale = stack.s.toFixed(4);
+            term.style.translate = `0 ${stack.y.toFixed(2)}px`;
+            term.style.opacity = stack.op.toFixed(3);
+          };
+          gsap.fromTo(stack,
+            { s: 1, y: 0, op: 1 },
+            {
+              s: 0.98,
+              y: 14,
+              op: 0.94,
+              ease: 'none',
+              immediateRender: false,
+              onUpdate: applyStack,
+              scrollTrigger: {
+                trigger: terminals[idx + 1],
+                start: 'top 85%',
+                end: 'top 30%',
+                scrub: 0.25,
+                invalidateOnRefresh: true,
+              }
+            }
+          );
+        });
+        return () => {
+          terminals.forEach((term) => {
+            term.style.scale = '';
+            term.style.translate = '';
+            term.style.opacity = '';
+          });
+        };
+      });
+
+      revealGridCards('#work .grid .tilt-card', { colsDesktop: 2, colsTablet: 2, y: 26, scale: 0.98, duration: 0.65 });
+
+      // ========================================================
+      // G. AGRI-SAGE PIPELINE PORTAL (EXPAND -> HOLD -> CONTRACT)
+      // ========================================================
+      const apertureMask = document.getElementById('aperture-mask');
+      const portalClip = { tb: 18, lr: 14, r: 48 };
+      function applyPortalClip() {
+        if (!apertureMask) return;
+        const val = `inset(${portalClip.tb.toFixed(2)}% ${portalClip.lr.toFixed(2)}% ${portalClip.tb.toFixed(2)}% ${portalClip.lr.toFixed(2)}% round ${portalClip.r.toFixed(1)}px)`;
+        apertureMask.style.clipPath = val;
+        apertureMask.style.webkitClipPath = val;
+      }
+      applyPortalClip();
+
+      mm.add({
+        isPinned: '(min-width: 768px) and (min-height: 680px)',
+        isCompact: '(max-width: 767px), (max-height: 679px)',
+      }, (context) => {
+        const { isPinned } = context.conditions;
+        const apertureTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: '#portal',
+            start: isPinned ? 'top top' : 'top 80%',
+            end: isPinned ? '+=95%' : 'bottom 30%',
+            pin: isPinned,
+            scrub: 0.2,
+            anticipatePin: 1,
+            invalidateOnRefresh: true,
+          }
+        });
+
+        apertureTl
+          .fromTo(portalClip,
+            { tb: 18, lr: 14, r: 48 },
+            { tb: 0, lr: 0, r: 16, ease: 'power2.out', duration: 0.42, onUpdate: applyPortalClip },
+            0
+          )
+          .fromTo(apertureMask,
+            { scale: 0.94 },
+            { scale: 1.0, ease: 'power2.out', duration: 0.42 },
+            0
+          )
+          .to({}, { duration: 0.24 }, 0.42)
+          .to(portalClip, {
+            tb: 14,
+            lr: 10,
+            r: 44,
+            ease: 'power2.inOut',
+            duration: 0.34,
+            onUpdate: applyPortalClip,
+          }, 0.66)
+          .to(apertureMask, {
+            scale: 0.95,
+            ease: 'power2.inOut',
+            duration: 0.34,
+          }, 0.66)
+          .fromTo('#aperture-image',
+            { yPercent: -15, scale: 1.22 },
+            { yPercent: 15, scale: 1.04, ease: 'none', duration: 1 },
+            0
+          )
+          .fromTo('#portal-hud-content',
+            { opacity: 0.65, scale: 0.94 },
+            { opacity: 1, scale: 1.0, ease: 'power2.out', duration: 0.42 },
+            0
+          )
+          .to('#portal-hud-content', {
+            opacity: 0.8,
+            scale: 0.96,
+            ease: 'power1.in',
+            duration: 0.34,
+          }, 0.66);
+
+        return () => {
+          portalClip.tb = 18;
+          portalClip.lr = 14;
+          portalClip.r = 48;
+          applyPortalClip();
+        };
+      });
+
+      // ========================================================
+      // H. TOOLS & STACK 4-COLUMN CASCADE (UNIFIED NO-FLASH TIMING)
+      // ========================================================
+      const stackCards = gsap.utils.toArray('#stack .tilt-card');
+      if (stackCards.length > 0) {
+        revealGridCards(stackCards, { colsDesktop: 4, colsTablet: 2, y: 26, scale: 0.98, duration: 0.6 });
+
+        gsap.from('#stack .grid .grid > span', {
+          scrollTrigger: {
+            trigger: '#stack .grid',
+            start: 'top 90%',
+            toggleActions: 'play none none none',
+            once: true,
+          },
+          opacity: 0,
+          y: 6,
+          duration: 0.4,
+          delay: 0.1,
+          stagger: 0.015,
+          ease: 'power2.out',
+          clearProps: 'opacity,transform',
+        });
+      }
+
+      // ========================================================
+      // I. MILESTONES TRACK SCRUBBING & CARD REVEAL
+      // ========================================================
+      const milestoneCards = gsap.utils.toArray('.milestone-card');
+      if (milestoneCards.length > 0) {
+        revealGridCards(milestoneCards, { colsDesktop: 2, colsTablet: 2, y: 24, scale: 0.985, duration: 0.6 });
+      }
+
+      const milestoneTrack = document.getElementById('milestone-progress-line');
+      const milestoneRunner = document.getElementById('milestone-runner');
+      if (milestoneTrack && milestoneRunner) {
+        gsap.set(milestoneTrack, { height: '100%', scaleY: 0, transformOrigin: 'top center' });
+
+        function syncMilestoneCards(p) {
+          milestoneCards.forEach((card, idx) => {
+            const threshold = (idx + 0.5) / (milestoneCards.length || 1);
+            const isActive = p > 0.01 && p >= threshold - 0.25 && p <= threshold + 0.25;
+            const activeClass = idx % 2 === 0 ? 'is-active-lime' : 'is-active-red';
+            card.classList.toggle(activeClass, isActive);
+          });
+        }
+
+        const milestoneTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: '#milestones',
+            start: 'top 65%',
+            end: 'bottom 55%',
+            scrub: 0.2,
+            invalidateOnRefresh: true,
+          },
+          onUpdate: function () {
+            syncMilestoneCards(this.progress());
+          }
+        });
+
+        milestoneTl
+          .fromTo(milestoneTrack,
+            { scaleY: 0 },
+            { scaleY: 1, ease: 'none', duration: 1 },
+            0
+          )
+          .fromTo(milestoneRunner,
+            { yPercent: -50, y: 0 },
+            { yPercent: -50, y: () => (milestoneTrack.parentElement ? milestoneTrack.parentElement.clientHeight : 0), ease: 'none', duration: 1 },
+            0
+          );
+      }
+
+      // I2. EXPERIENCE CARDS REVEAL
+      const experienceCards = gsap.utils.toArray('.experience-card');
+      if (experienceCards.length > 0) {
+        revealGridCards(experienceCards, { colsDesktop: 2, colsTablet: 2, y: 24, scale: 0.985, duration: 0.6 });
+      }
+
+      // ========================================================
+      // J. CONTACT SECTION STAGE ZOOM & CASCADE
+      // ========================================================
+      gsap.fromTo('#cta-stage-bg',
+        { scale: 1.12, opacity: 0.78 },
+        {
+          scale: 1.0,
+          opacity: 0.95,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: '#terminal',
+            start: 'top bottom',
+            end: 'bottom bottom',
+            scrub: 0.2,
+          }
+        }
+      );
+
+      gsap.from('#terminal .w-full.max-w-md, #terminal .mt-4', {
+        scrollTrigger: {
+          trigger: '#terminal',
+          start: 'top 92%',
+          toggleActions: 'play none none none',
+          once: true,
+        },
+        opacity: 0,
+        y: 24,
+        duration: 0.6,
+        stagger: 0.08,
+        ease: 'power3.out',
+        clearProps: 'opacity,transform',
+      });
+
+      // ========================================================
+      // K. BIDIRECTIONAL NAVBAR ACTIVE SECTION SYNC
+      // ========================================================
+      ScrollTrigger.create({
+        trigger: '#hero',
+        start: 'top top',
+        end: 'bottom 45%',
+        onEnter: () => setActiveNavSection(null),
+        onEnterBack: () => setActiveNavSection(null),
+      });
+
+      ['philosophy', 'design', 'academics', 'work', 'stack', 'milestones', 'experience', 'terminal'].forEach((id) => {
+        const sectionEl = document.getElementById(id);
+        if (!sectionEl) return;
+        ScrollTrigger.create({
+          trigger: sectionEl,
+          start: 'top 45%',
+          end: 'bottom 45%',
+          onToggle: (self) => {
+            if (self.isActive) setActiveNavSection(id);
+          }
+        });
+      });
+
+      ScrollTrigger.sort();
+    }
+
+    // Initialize when DOM is ready and refresh coordinates once fonts & images settle
+    function handleReady() {
+      initMasterMotion();
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(() => {
+          if (typeof ScrollTrigger !== 'undefined') {
+            ScrollTrigger.refresh();
+          }
+        });
+      }
+      window.addEventListener('load', () => {
+        if (typeof ScrollTrigger !== 'undefined') {
+          ScrollTrigger.refresh();
+        }
+      }, { once: true });
+    }
+
+    // Window resize handler with debounce for responsive ScrollTrigger recalibration
+    let resizeTimer = null;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        if (typeof ScrollTrigger !== 'undefined') {
+          ScrollTrigger.refresh();
+        }
+      }, 200);
+    });
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', handleReady);
+    } else {
+      handleReady();
+    }
+  </script>
+</body>
+</html>
