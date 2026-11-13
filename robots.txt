@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://m4gnel.github.io/sitemap.xml
+
